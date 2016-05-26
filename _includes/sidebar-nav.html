@@ -33,7 +33,7 @@
     {% endfor %}
 
     {% if is_nav_page == true %}
-        {% if node_parts_size > last %}
+        {% if node_parts_size > last and node_parts[last] == node_parts_last[last] %}
             <ul>
         {% elsif node_parts_size < last %}
             </ul>
@@ -43,5 +43,7 @@
 
         {% assign last = node_parts_size %}
     {% endif %}
+
+    {% assign node_parts_last = node_parts %}
 {% endfor %}
 </ul>
