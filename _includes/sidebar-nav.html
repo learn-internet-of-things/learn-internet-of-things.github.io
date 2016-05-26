@@ -14,36 +14,38 @@
 
 {% assign last = nav_parts_size %}
 {% for node in nodes %}
-    {% assign node_parts = node.url | split: '/' %}
-    {% for node_part in node_parts %}
-        {% if node_part != '' %}
-            {% assign node_parts_size = forloop.index0 %}
-        {% endif %}
-    {% endfor %}
-
-    {% assign is_nav_page = true %}
-
-    {% for nav_part in nav_parts %}
-        {% if nav_parts_size == 0 or nav_part != '' %}
-            {% if nav_parts_size != 0 and nav_part != node_parts[forloop.index0] %}
-                {% assign is_nav_page = false %}
-                {% break %}
+    {% if node.title %}
+        {% assign node_parts = node.url | split: '/' %}
+        {% for node_part in node_parts %}
+            {% if node_part != '' %}
+                {% assign node_parts_size = forloop.index0 %}
             {% endif %}
+        {% endfor %}
+
+        {% assign is_nav_page = true %}
+
+        {% for nav_part in nav_parts %}
+            {% if nav_parts_size == 0 or nav_part != '' %}
+                {% if nav_parts_size != 0 and nav_part != node_parts[forloop.index0] %}
+                    {% assign is_nav_page = false %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% if is_nav_page == true %}
+            {% if node_parts_size > last and node_parts[last] == node_parts_last[last] %}
+                <ul>
+            {% elsif node_parts_size < last %}
+                </ul>
+            {% endif %}
+
+            <li><a class="page-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a></li>
+
+            {% assign last = node_parts_size %}
         {% endif %}
-    {% endfor %}
 
-    {% if is_nav_page == true %}
-        {% if node_parts_size > last and node_parts[last] == node_parts_last[last] %}
-            <ul>
-        {% elsif node_parts_size < last %}
-            </ul>
-        {% endif %}
-
-        <li>{{ node.url }}</li>
-
-        {% assign last = node_parts_size %}
+        {% assign node_parts_last = node_parts %}
     {% endif %}
-
-    {% assign node_parts_last = node_parts %}
 {% endfor %}
 </ul>
