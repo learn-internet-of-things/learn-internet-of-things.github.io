@@ -1,0 +1,47 @@
+{% assign nav_parts = nav | split: '/' %}
+
+{% assign url_parts = page.url | split: '/' %}
+{% assign url_parts_size = url_parts | size %}
+
+{% assign nodes = site.pages | sort: 'url' %}
+
+{% assign nav_parts_size = 0 %}
+{% for nav_part in nav_parts %}
+    {% if nav_part != '' %}
+        {% assign nav_parts_size = forloop.index0 %}
+    {% endif %}
+{% endfor %}
+
+{% assign last = nav_parts_size %}
+{% for node in nodes %}
+    {% assign node_parts = node.url | split: '/' %}
+    {% for node_part in node_parts %}
+        {% if node_part != '' %}
+            {% assign node_parts_size = forloop.index0 %}
+        {% endif %}
+    {% endfor %}
+
+    {% assign is_nav_page = true %}
+
+    {% for nav_part in nav_parts %}
+        {% if nav_parts_size == 0 or nav_part != '' %}
+            {% if nav_parts_size != 0 and nav_part != node_parts[forloop.index0] %}
+                {% assign is_nav_page = false %}
+                {% break %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if is_nav_page == true %}
+        {% if node_parts_size > last %}
+            <ul>
+        {% elsif node_parts_size < last %}
+            </ul>
+        {% endif %}
+
+        <li>{{ node.url }}</li>
+
+        {% assign last = node_parts_size %}
+    {% endif %}
+{% endfor %}
+</ul>
