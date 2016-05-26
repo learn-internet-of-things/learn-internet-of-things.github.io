@@ -1,0 +1,15 @@
+<div class="col-sm-10 col-sm-offset-2 navbar navbar-default">
+    <div class="wrapper">
+
+        <nav class="site-nav">
+            <div class="trigger">
+                {% assign nodes = site.pages | sort: 'order' %}
+                {% for node in nodes %}
+                    {% if node.category == 'home' %}
+                    <a class="page-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </nav>
+    </div>
+</div>
