@@ -1,4 +1,19 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
+
+$material_green: #009688;
+$material_green2: #3bab55;
+$material_green3: #1cab41;
+$material_green4: #00796B;
+$material_gray:  #414c6a;
+$material_gray2: #2e3c2b;
+$material_gray3: #182414;
+$material_apricot: #e5b168;
+$material_cyan: #9dd5c8;
 
 body{
 	color: #2c3e50;
