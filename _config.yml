@@ -18,10 +18,6 @@ github_username:  learn-internet-of-things
 # twitter_username: jekyllrb
 
 # Build settings
-# markdown: kramdown
-markdown: redcarpet
-
-redcarpet:
-  extensions: ["footnotes", "tables"]
+markdown: kramdown
 
 exclude: ["CNAME", "README.md"]
