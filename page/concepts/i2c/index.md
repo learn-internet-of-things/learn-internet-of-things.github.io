@@ -34,8 +34,9 @@ In the official ESP8266EX datasheet it is said[^datasheet]:
 > I2C interface functionality can be realized via software programming, the clock frequency reaches 100 KHz at a maximum.
 > It should be noted that I2C clock frequency should be higher than the slowest clock frequency of the slave device.
 
-But this implicitely means, that you can use any GPIO for software-based I²C.
-This is sad on the one hand as any I²C communication has to be done by the processor, but on the other hand there is no need to use IO14 for the SCL since this pin is needed by HSPI.
+The fact that ESP8266EX has no hardware I²C was additionally confirmed in the official forum.[^no-hardware-i2c]
+This is sad on the one hand as any I²C communication has to be done by the processor.
+On the other hand This means that you can use any GPIO for software-based I²C and that there is no need to use IO14 for the SCL since this pin is needed by HSPI.
 
 ```
       1   2   3-9
@@ -59,3 +60,4 @@ References
 ----------
 
 [^datasheet]: [ESP8266EX Datasheet](http://espressif.com/en/file/957/download?token=qg825sq2)
+[^no-hardware-i2c]: [Does ESP8266 actually have hardware I2C?](http://bbs.espressif.com/viewtopic.php?t=1032)
