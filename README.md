@@ -4,6 +4,6 @@ README
 Jekyll
 ------
 
-### Extensions
+### Markdown
 
-https://george-hawkins.github.io/basic-gfm-jekyll/redcarpet-extensions.html
+http://kramdown.gettalong.org/quickref.html#footnotes
