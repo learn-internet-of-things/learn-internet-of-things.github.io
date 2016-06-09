@@ -37,5 +37,6 @@ title: Design
 |  30 | VDDA        | P    | Analog Power 3.0V ~ 3.6V                           |        |       |       |           |          |            |
 |  31 | RES12K      | I    | Series with 12 kΩ resistor connected to ground     |        |       |       |           |          |            |
 |  32 | EXT_RSTB    | I    | External reset signal (Low: Active)                |        |       |       |           |          |            |
+|  33 | GND         | P    | Ground                                             |        |       |       |           |          |            |
 
 * UART0_TXD / UART1_TXD during flash programming
