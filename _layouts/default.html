@@ -8,7 +8,10 @@
     <div class="col-sm-2 hidden-xs sidebar" style="min-height: 100%;">
         {% include header.html %}
 
-        {% assign nav = '/page/' %}
+        {% assign nav = '/hardware' %}
+        {% include sidebar-nav.html %}
+
+        {% assign nav = '/software' %}
         {% include sidebar-nav.html %}
     </div>
 

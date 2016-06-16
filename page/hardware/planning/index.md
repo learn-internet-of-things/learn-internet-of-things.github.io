@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: page-titleless
 title: Planning
+permalink: /hardware/planning/
 ---
 
 Planning the Hardware

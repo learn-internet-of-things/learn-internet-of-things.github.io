@@ -3,6 +3,7 @@ layout: page
 title: News
 category: home
 order: 2
+permalink: /news/
 ---
 
 <ul class="post-list">

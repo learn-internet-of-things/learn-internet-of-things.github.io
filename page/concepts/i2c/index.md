@@ -1,6 +1,7 @@
 ---
 layout: default
 title: I²C
+permalink: /concepts/i2c/
 ---
 
 Inter-Integrated Circuit (I²C)
