@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page-titleless
 title: I²S
 permalink: /concepts/i2s/
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page-titleless
 title: I²C
 permalink: /concepts/i2c/
 ---

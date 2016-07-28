@@ -39,6 +39,7 @@ The ROM is not programmable, therefore, user programs must be stored in an exter
 Furthermore the chip has 16 GPIO's that are multiplexed with other functions like PWM, SDIO, SPI, UART or I2S.
 
 For a complete list, you can see the table below, that is mainly taken from the ESP8266EX datasheet.
+The pin description is fitted a bit to the applications that are really used.
 
 | Pin | Name        | Type | Description / Main Application                     | GPIO   | PWM  | SDIO        | SPI   | HSPI  | UART      | I2S      | Misc       |
 | ---:| ----------- | ---- | -------------------------------------------------- | ------ | ---- | ----------- | ----- | ----- | --------- | -------- | ---------- |
@@ -76,10 +77,52 @@ For a complete list, you can see the table below, that is mainly taken from the 
 |  32 | EXT_RSTB    | I    | External reset signal (Low: Active)                |        |      |             |       |       |           |          |            |
 |  33 | GND         | P    | Ground                                             |        |      |             |       |       |           |          |            |
 
+
 * UART0_TXD / UART1_TXD during flash programming
 
 Planning the LIOT-ESP8266
 -------------------------
+
+The first focus of the board planning is, of course, on the ESP8266EX.
+Many of the pins have a fixed purpose like the power supply, connections to an antenna or a crystal oscillator etc.
+Admittedly, also the power supply offers a wide range of options, but nonetheless, the assignments of the GPIO's should be done first.
+
+As already mentioned, the ESP8266EX has 16 GPIO's that are multiplexed with other functions.
+For this reason, some of those have already a fixed purpose.
+
+GPIO 3 will always be needed for UART receive and GPIO 1 is used for UART transmit while in normal operation.
+When the chip is in programming mode, GPIO 2 serves as the UART transmit pin, but this will not be needed and thus GPIO 2 will continue to be used for other tasks available.
+So, the single purpose of GPIO's 1 and 3 will be the connection to the USB-to-serial converter CP2102.
+
+The external flash memory W25Q32FV respectively W25Q128FV is connected to the GPIO's from 6 to 11 which serve as SPI clock, MISO, MOSI, hold, write protect and chip select 0 (in this order).
+Hold and write protect are misused to increase the write speed by providing the ``Quad IO'' mode.
+The other two chip select pins should not be used for connecting other SPI slaves to avoid a misbehavior with the flash.
+
+The other SPI interface - HSPI - is provided by the GPIO's from 12 to 15 which serve as MISO, MOSI, clock and chip select (in this order again).
+Regrettably, there are no other chip select pins for HSPI so that only one devices can be connected, which will be the sub-1GHz RF transceiver CC1101.
+In order to avoid interference and to be able to communicate with the transceiver durably, these GPIO pins should not connected differently.
+Moreover, the use of a pull down resistor on chip select is recommended to avoid floating states.
+This can be done as there is only one slave device.
+
+Finally, GPIO 16 must be connected to the EXT\_RSTB pin of the ESP8266EX to be able to wakeup from deep sleep again.
+
+So, only the four GPIO's 0, 2, 4 and 5 remain for free decisions.
+Two pins will be needed for the use of software-I2C and thus connect the I2C slaves.
+Furthermore, a possibility to receive interrupts from the slave devices port expander, nine-axis sensor and environmental sensor is needed as well as the possibility to reset the port expander.
+The signaler needs a PWM signal and for all three LED's it would also be nice to be able to use PWM.
+This would normally require ~10 more GPIO pins.
+
+The requirement for dimmable LED's may be waived foremost.
+Instead, they will be connected to the port expander to simply switch them on and off.
+Pins 4 and 5 will be used for software-I2C.
+The two remaining GPIO pins will be needed to reset the port expander and receive interrupts from it.
+The port expander will always fire interrupts if the state of an input changes.
+This eliminates the need for further interrupt enabled GPIO's on the ESP8266EX.
+
+In order to get in the signaler, a trick will be used.
+The signaler will be connected to the I2C clock line via a transistor.
+Since the I2C interface will be implemented only by software, it can be achieved to obtain mutual exclusion of both components;
+the signaler will only be enabled if the transistor is switched on by a GPIO of the port expander and thus will not make any noise if I2C is used, and the I2C slaves will not receive any data when the signaler is used and thus ignore the false "clock signal".
 
 It doesn't really matter what the LIOT-ESP8266 board can do.
 Rather, it is relevant what concepts are covered by the selected components.
@@ -93,30 +136,16 @@ GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
  
  
 
-
-
-
-
-
 | Pin | Name        | Type | GPIO       | SPI       | HSPI      | UART       | I2S      | Misc         | W25Q128   | CP2102    | Si4463   | PCA6416A   | I2C Slaves¹ | Piezo | RGB-LED |
 | ---:| ----------- | ---- | ---------- | --------- | --------- | ---------- | -------- | ------------ | --------- | --------- | -------- | --------   | ----------- |       |         |
-|   1 | VDDA        | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   2 | LNA         | I/O  |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   3 | VDD3P3      | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   4 | VDD3P3      | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   5 | VDD_RTC     | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   6 | TOUT        | I    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|   7 | CHIP_PU     | I    |            |           |           |            |          |              |           |           |          |            |             |       |         |
 |   8 | XPD_DCDC    | I/O  | **GPIO16** |           |           |            |          | **EXT_RSTB** |           |           |          |            |             |       |         |
 |   9 | MTMS        | I/O  | GPIO14     |           | **CLK**   | U0_DSR     | I2SI_WS  |              |           |           | **SCLK** |            |             |       |         |
 |  10 | MTDI        | I/O  | GPIO12     |           | **MISO**  | U0_DTR     | I2SI_SD  |              |           |           | **SDO**  |            |             |       |         |
-|  11 | VDDPST      | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
 |  12 | MTCK        | I/O  | GPIO13     |           | **MOSI**  | U0_CTS     | I2SI_SCK |              |           |           | **SDI**  |            |             |       |         |
 |  13 | MTDO        | I/O  | GPIO15     |           | **/CS**   | U0_RTS     | I2SO_SCK |              |           |           | **nSEL** |            |             |       |         |
 |  14 | GPIO2       | I/O  | **GPIO2**  |           |           | **²**      | I2SO_WS  |              |           |           |          | **/INT**   |             |       |         |
 |  15 | GPIO0       | I/O  | **GPIO0**  | /CS2      |           |            |          |              |           | **/RTS²** |          | **/RESET** |             |       |         |
 |  16 | GPIO4       | I/O  | **GPIO4**  |           |           |            |          | CLK_XTAL     |           |           |          | **SCK**    | **SCK**     |       |         |
-|  17 | VDDPST      | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
 |  18 | SDIO_DATA_2 | I/O  | GPIO9      | **/HOLD** | /HOLD     |            |          |              | **/HOLD** |           |          |            |             |       |         |
 |  19 | SDIO_DATA_3 | I/O  | GPIO10     | **/WP**   | /WP       |            |          |              | **/WP**   |           |          |            |             |       |         |
 |  20 | SDIO_CMD    | I/O  | GPIO11     | **/CS0**  |           | U1_RTS     |          |              | **/CS**   |           |          |            |             |       |         |
@@ -126,13 +155,6 @@ GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
 |  24 | GPIO5       | I/O  | **GPIO5**  |           |           |            |          | CLK_RTC      |           |           |          | **SDI**    | **SDI**     |       |         |
 |  25 | U0RXD       | I/O  | GPIO3      |           |           | **U0_RXD** | I2SO_SD  | CLK_XTAL     |           | **TXD**   |          |            |             |       |         |
 |  26 | U0TXD       | I/O  | GPIO1      | /CS1      |           | **U0_TXD** |          | CLK_RTC      |           | **RXD**   |          |            |             |       |         |
-|  27 | XTAL_OUT    | I/O  |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|  28 | XTAL_IN     | I/O  |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|  29 | VDDD        | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|  30 | VDDA        | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|  31 | RES12K      | I    |            |           |           |            |          |              |           |           |          |            |             |       |         |
-|  32 | EXT_RSTB    | I    |            |           |           |            |          |              |           | **/DTR²** |          |            |             |       |         |
-|  33 | GND         | P    |            |           |           |            |          |              |           |           |          |            |             |       |         |
 
 <small>1. I2C slaves are PCA6416A (Port Expander, with extra column), BME280 (Temp / Hum / Baro), BMX055 (Accel / Gyro / Mag), APDS-9930 (Prox / Bright)</small>  
 <small>2. during flash programming U0_TXD / U1_TXD, 3. during flash programming</small>
@@ -159,6 +181,14 @@ Enery Saving Options
 --------------------
 
 https://github.com/z2amiller/sensorboard/blob/master/PowerSaving.md
+
+
+No free Pins left
+-----------------
+
+PWM?
+
+Output 1 at port expander, AND with clock signal as PWM
 
 
 Examples

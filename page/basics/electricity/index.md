@@ -7,6 +7,21 @@ permalink: /basics/electricity/
 Electrical Basics
 -----------------
 
+* Polarity
+* Voltage
+* Current
+
+    * Alternating Current
+    * Direct Current
+    
+* Resistance
+* Ohm's Law
+* Circuits
+    
+    * Analog / Digital
+
+* Schematics
+
 ...
 
 Active electr ical components transistors, diodes or integrated circuits.
