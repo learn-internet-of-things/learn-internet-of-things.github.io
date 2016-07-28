@@ -1,4 +1,7 @@
 ---
-layout: default
+layout: page
 title: Concepts
+permalink: /concepts/
 ---
+
+...
