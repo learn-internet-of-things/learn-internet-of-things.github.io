@@ -1,11 +1,9 @@
 ---
-layout: page-titleless
+layout: page
+alias: Planning
 title: Planning
 permalink: /hardware/planning/
 ---
-
-Planning the Hardware
-=====================
 
 If you are used to program usual computer or smartphone apps, web applications or comparable software, you are probably used to try things out until they start to work.
 When dealing with hardware dependent programming, this might become already a bit risky, because you could make an irrevocable error that prevents you from undoing that failure again, although the hardware is possibly still intact.

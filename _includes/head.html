@@ -24,16 +24,10 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-    <script>
-        $(function() {
-            $(document).tooltip({
-                position: {
-                    my: "left+10 bottom+60"
-                },
-                track: true
-            });
-        });
-    </script>
+
+    <script src="/assets/js-libs/imageMapResizer.min.js"></script>
+
+    <script src="/assets/js/home.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
@@ -42,7 +36,6 @@
 
     <link rel="stylesheet" href="{{ "/assets/resources/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/assets/resources/syntax/syntax.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

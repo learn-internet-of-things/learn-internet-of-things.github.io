@@ -1,12 +1,9 @@
 ---
-layout: page-titleless
-title: SDK's
+layout: page
+alias: SDK's
+title: Source Development Kits
 permalink: /software/sdks/
 ---
-
-Source Development Kits
-=======================
-
 
 
 ### Non-OS vs. RTOS

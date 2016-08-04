@@ -1,35 +1,8 @@
 ---
-layout: page-titleless
+layout: home
 title: Home
 category: home
 order: 1
 ---
 
-Learn Internet of Things
-========================
-
-<figure>
-<img name="map" src="media/LIOT-ESP8266-ENV.png" width="800" height="408" id="map" usemap="#m_map" alt="" />
-<map name="m_map" id="m_map">
-<area shape="poly" coords="309,289,357,275,359,282,363,282,366,292,362,292,364,299,368,298,372,306,366,308,368,314,359,317,361,322,361,326,334,335,332,329,332,325,320,329,319,324,315,325,311,316,315,314,314,308,311,308,308,301,311,297,309,289" href="javascript:;" alt="" />
-<area shape="poly" coords="268,134,269,132,308,121,309,123,320,124,338,185,334,186,329,185,329,189,289,200,287,197,279,202,261,140,268,134" href="javascript:;" title="Port Expander ()" alt="Port Expander ()" />
-<area shape="poly" coords="368,139,367,143,381,185,428,172,429,167,414,127,368,139" href="javascript:;" title="USB-to-Serial Converter (CP2102)" alt="USB-to-Serial Converter (CP2102)" />
-<area shape="poly" coords="421,85,420,96,435,135,479,122,481,112,467,77,461,74,421,85" href="javascript:;" title="Piezo Speaker" alt="Piezo Speaker" />
-<area shape="poly" coords="529,102,564,93,578,123,577,128,542,138,528,109,529,102" href="javascript:;" title="RF (Sub-1-GHz) Transceiver (CC1101)" alt="RF (Sub-1-GHz) Transceiver (CC1101)" />
-<area shape="poly" coords="506,28,529,22,530,24,531,29,540,27,554,51,551,61,511,73,509,68,505,68,502,63,504,57,503,55,500,57,497,51,499,45,500,40,501,38,505,37,506,28" href="javascript:;" title="Programmable Push Button" alt="Programmable Push Button" />
-<area shape="poly" coords="667,75,661,77,664,83,671,81,673,85,681,83,703,121,761,103,730,49,672,64,670,69,666,70,667,75" href="javascript:;" title="RF (Sub-1-GHz) Ceramic + PCB Antenna" alt="RF (Sub-1-GHz) Ceramic + PCB Antenna" />
-<area shape="poly" coords="582,31,594,56,608,52,609,49,597,26,593,26,582,31" href="javascript:;" alt="" />
-<area shape="poly" coords="583,102,581,106,587,117,603,112,606,108,601,98,596,99,583,102" href="javascript:;" alt="" />
-<area shape="poly" coords="633,172,642,191,647,189,647,191,668,184,667,181,657,161,641,165,637,167,637,169,633,172" href="javascript:;" alt="" />
-<area shape="poly" coords="509,230,554,217,557,225,559,223,562,228,559,231,564,240,566,240,568,245,566,246,567,248,565,254,560,257,562,261,559,267,535,274,532,271,533,266,520,269,518,263,514,264,511,258,513,254,512,249,508,249,505,242,508,238,507,236,509,230" href="javascript:;" alt="" />
-<area shape="poly" coords="395,261,395,256,402,252,413,250,416,251,417,253,422,251,421,249,445,243,446,245,448,240,456,237,465,234,469,235,486,281,491,286,488,292,482,288,474,292,474,298,427,313,422,307,417,309,415,309,415,314,410,314,409,304,395,261" href="javascript:;" title="Micro USB Connector" alt="Micro USB Connector" />
-<area shape="poly" coords="370,268,373,276,389,271,389,269,387,262,370,268" href="javascript:;" alt="" />
-<area shape="poly" coords="314,265,315,262,338,255,345,276,344,278,320,286,314,265" href="javascript:;" alt="" />
-<area shape="poly" coords="199,200,223,193,227,195,230,202,229,208,204,216,198,213,196,205,199,200" href="javascript:;" title="Crystal Oscillator" alt="Crystal Oscillator" />
-<area shape="poly" coords="176,159,225,146,235,181,186,195,183,191,176,159" href="javascript:;" alt="" />
-<area shape="poly" coords="203,227,233,219,235,230,248,226,253,227,263,261,262,263,258,264,262,278,256,281,252,265,246,268,250,282,243,285,238,269,233,271,237,285,230,288,226,273,220,275,225,290,217,292,213,277,208,279,212,293,205,297,200,281,197,281,194,277,188,250,189,244,205,240,203,227" href="javascript:;" alt="" />
-<area shape="poly" coords="49,208,65,313,70,311,73,340,20,355,5,220,49,208" href="javascript:;" title="Wi-Fi (2.4 GHz) PCB Antenna" alt="Wi-Fi (2.4 GHz) PCB Antenna" />
-<area shape="poly" coords="121,278,171,263,174,265,184,313,132,329,129,326,121,278" href="javascript:;" title="Wi-Fi-integrated Microcontroller Unit (ESP8266EX)" alt="Wi-Fi-integrated Microcontroller Unit (ESP8266EX)" />
-<area shape="poly" coords="115,146,79,155,79,159,72,168,72,172,78,205,84,202,89,203,125,193,126,190,133,190,138,189,129,153,118,148,115,146" href="javascript:;" title="Serial Flash Memory (W25Q32FV)" alt="Serial Flash Memory (W25Q32FV)" />
-</map>
-</figure>
+...
