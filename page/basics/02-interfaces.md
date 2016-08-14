@@ -1,6 +1,5 @@
 ---
 layout: page
-alias: Interfaces
 title: Interfaces
 permalink: /basics/interfaces/
 ---
@@ -84,6 +83,11 @@ Serial
 ------
 
 
+References
+----------
+
+[^datasheet]: [ESP8266EX Datasheet](http://espressif.com/en/file/957/download?token=qg825sq2)
+[^no-hardware-i2c]: [Does ESP8266 actually have hardware I2C?](http://bbs.espressif.com/viewtopic.php?t=1032)
 References
 ----------
 

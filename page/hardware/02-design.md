@@ -1,6 +1,5 @@
 ---
 layout: page
-alias: Design
 title: Design
 permalink: /hardware/design/
 ---

@@ -1,10 +1,8 @@
 ---
 layout: page
-alias: SDK's
 title: Source Development Kits
-permalink: /software/sdks/
+permalink: /software/source-development-kit/
 ---
-
 
 ### Non-OS vs. RTOS
 

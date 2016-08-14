@@ -1,51 +1,28 @@
-{% assign nav_parts = nav | split: '/' %}
-
-{% assign url_parts = page.url | split: '/' %}
-{% assign url_parts_size = url_parts | size %}
-
-{% assign nodes = site.pages | sort: 'url' %}
-
-{% assign nav_parts_size = 0 %}
-{% for nav_part in nav_parts %}
-    {% if nav_part != '' %}
-        {% assign nav_parts_size = forloop.index0 %}
-    {% endif %}
-{% endfor %}
-
-{% assign last = nav_parts_size %}
-{% for node in nodes %}
-    {% if node.title %}
-        {% assign node_parts = node.url | split: '/' %}
-        {% for node_part in node_parts %}
-            {% if node_part != '' %}
-                {% assign node_parts_size = forloop.index0 %}
-            {% endif %}
-        {% endfor %}
-
-        {% assign is_nav_page = true %}
-
-        {% for nav_part in nav_parts %}
-            {% if nav_parts_size == 0 or nav_part != '' %}
-                {% if nav_parts_size != 0 and nav_part != node_parts[forloop.index0] %}
-                    {% assign is_nav_page = false %}
-                    {% break %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-
-        {% if is_nav_page == true %}
-            {% if node_parts_size > last and node_parts[last] == node_parts_last[last] %}
-                <ul>
-            {% elsif node_parts_size < last %}
-                </ul>
-            {% endif %}
-
-            <li><a class="page-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.alias }}</a></li>
-
-            {% assign last = node_parts_size %}
-        {% endif %}
-
-        {% assign node_parts_last = node_parts %}
-    {% endif %}
-{% endfor %}
+<!-- <ul> -->
+<li><a class="page-link" href="/basics/">Basics</a></li>
+<ul>
+    <li><a class="page-link" href="/basics/electricity/">Electricity</a></li>
+    <li><a class="page-link" href="/basics/interfaces/">Interfaces</a></li>
+    <li><a class="page-link" href="/basics/microcontroller/">Microcontroller</a></li>
+    <li><a class="page-link" href="/basics/prototyping/">Prototyping</a></li>
 </ul>
+
+<li><a class="page-link" href="/hardware/">Hardware</a></li>
+<ul>
+    <li><a class="page-link" href="/hardware/planning/">Planning</a></li>
+    <li><a class="page-link" href="/hardware/design/">Design</a></li>
+    <li><a class="page-link" href="/hardware/realization/">Realization</a></li>
+</ul>
+
+<li><a class="page-link" href="/software/">Software</a></li>
+<ul>
+    <li><a class="page-link" href="/software/source-development-kit/">Development Kit</a></li>
+    <li><a class="page-link" href="/software/debugging/">Debugging</a></li>
+    <li><a class="page-link" href="/software/wi-fi-transceiver/">Wi-Fi Transceiver</a></li>
+    <li><a class="page-link" href="/software/input-output/">Input / Output</a></li>
+    <li><a class="page-link" href="/software/interrupts/">Interrupts</a></li>
+    <li><a class="page-link" href="/software/timer-and-events/">Timer and Events</a></li>
+    <li><a class="page-link" href="/software/low-power-modes/">Low Power Modes</a></li>
+    <li><a class="page-link" href="/software/peripherals/">Peripherals</a></li>
+</ul>
+<!-- </ul> -->

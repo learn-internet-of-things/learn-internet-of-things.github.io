@@ -1,6 +1,5 @@
 ---
 layout: page
-alias: Planning
 title: Planning
 permalink: /hardware/planning/
 ---

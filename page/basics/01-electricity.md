@@ -1,6 +1,5 @@
 ---
 layout: page
-alias: Electricity
 title: Electrical Basics
 permalink: /basics/electricity/
 ---

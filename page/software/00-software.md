@@ -1,6 +1,5 @@
 ---
 layout: page
-alias: Sofrware
 title: Software
 permalink: /software/
 ---
