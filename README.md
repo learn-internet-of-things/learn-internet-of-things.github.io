@@ -30,6 +30,7 @@ ruby dk.rb install
 Open CMD window.
 
 ```
+gem install RedCloth -v '4.2.9
 gem install bundler
 ```
 
