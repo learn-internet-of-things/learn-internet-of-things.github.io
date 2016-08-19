@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Source Development Kits
+title: Source Development Kit
 permalink: /software/source-development-kit/
 ---
 
