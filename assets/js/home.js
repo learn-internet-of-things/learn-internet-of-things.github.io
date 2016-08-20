@@ -6,13 +6,9 @@ $(function() {
         },
         track: true
     });
-});
 
-$(function() {
     $('map').imageMapResize();
-});
 
-$(function() {
     buildScrollingContentNavigation();
 });
 
