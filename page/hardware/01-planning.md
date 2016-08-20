@@ -133,14 +133,14 @@ GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
  
  
 
-| Pin | Name        | Type | GPIO       | SPI       | HSPI      | UART       | I2S      | Misc         | W25Q128   | CP2102    | Si4463   | PCA6416A   | I2C Slaves¹ | Piezo | RGB-LED |
-| ---:| ----------- | ---- | ---------- | --------- | --------- | ---------- | -------- | ------------ | --------- | --------- | -------- | --------   | ----------- |       |         |
+| Pin | Name        | Type | GPIO       | SPI       | HSPI      | UART       | I2S      | Misc         | W25Q128   | CP2102    | CC1101   | PCA6416A   | I2C Bus     | Piezo | RGB-LED |
+| ---:| ----------- | ---- | ---------- | --------- | --------- | ---------- | -------- | ------------ | --------- | --------- | -------- | --------   | ----------- | ----- |         |
 |   8 | XPD_DCDC    | I/O  | **GPIO16** |           |           |            |          | **EXT_RSTB** |           |           |          |            |             |       |         |
 |   9 | MTMS        | I/O  | GPIO14     |           | **CLK**   | U0_DSR     | I2SI_WS  |              |           |           | **SCLK** |            |             |       |         |
 |  10 | MTDI        | I/O  | GPIO12     |           | **MISO**  | U0_DTR     | I2SI_SD  |              |           |           | **SDO**  |            |             |       |         |
 |  12 | MTCK        | I/O  | GPIO13     |           | **MOSI**  | U0_CTS     | I2SI_SCK |              |           |           | **SDI**  |            |             |       |         |
 |  13 | MTDO        | I/O  | GPIO15     |           | **/CS**   | U0_RTS     | I2SO_SCK |              |           |           | **nSEL** |            |             |       |         |
-|  14 | GPIO2       | I/O  | **GPIO2**  |           |           | **²**      | I2SO_WS  |              |           |           |          | **/INT**   |             |       |         |
+|  14 | GPIO2       | I/O  | **GPIO2**  |           |           | **²**      | I2SO_WS  |              |           |           |          | **SDI**    |             |       |         |
 |  15 | GPIO0       | I/O  | **GPIO0**  | /CS2      |           |            |          |              |           | **/RTS²** |          | **/RESET** |             |       |         |
 |  16 | GPIO4       | I/O  | **GPIO4**  |           |           |            |          | CLK_XTAL     |           |           |          | **SCK**    | **SCK**     |       |         |
 |  18 | SDIO_DATA_2 | I/O  | GPIO9      | **/HOLD** | /HOLD     |            |          |              | **/HOLD** |           |          |            |             |       |         |
@@ -149,7 +149,7 @@ GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
 |  21 | SDIO_CLK    | I/O  | GPIO6      | **CLK**   |           | U1_CTS     |          |              | **CLK**   |           |          |            |             |       |         |
 |  22 | SDIO_DATA_0 | I/O  | GPIO7      | **MISO**  |           | U1_TXD     |          |              | **DO**    |           |          |            |             |       |         |
 |  23 | SDIO_DATA_1 | I/O  | GPIO8      | **MOSI**  |           | U1_RXD     |          |              | **DI**    |           |          |            |             |       |         |
-|  24 | GPIO5       | I/O  | **GPIO5**  |           |           |            |          | CLK_RTC      |           |           |          | **SDI**    | **SDI**     |       |         |
+|  24 | GPIO5       | I/O  | **GPIO5**  |           |           |            |          | CLK_RTC      |           |           |          | **/INT**   | **SDI**     |       |         |
 |  25 | U0RXD       | I/O  | GPIO3      |           |           | **U0_RXD** | I2SO_SD  | CLK_XTAL     |           | **TXD**   |          |            |             |       |         |
 |  26 | U0TXD       | I/O  | GPIO1      | /CS1      |           | **U0_TXD** |          | CLK_RTC      |           | **RXD**   |          |            |             |       |         |
 
