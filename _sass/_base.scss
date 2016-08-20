@@ -204,3 +204,16 @@ pre {
         }
     }
 }
+
+table {
+    display: block;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 40em;
+}
+
+#sliding-content-nav {
+    float: right;
+    width: 20em;
+    font-size: 0.8em;
+}
