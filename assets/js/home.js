@@ -20,6 +20,7 @@ function buildScrollingContentNavigation() {
         setAnchor($(this), index);
         sidenav += buildLink(index, $(this).html());
         hasElements = true;
+        index++;
     });
 
     $("#sliding-content-nav .panel-body").html(sidenav);
