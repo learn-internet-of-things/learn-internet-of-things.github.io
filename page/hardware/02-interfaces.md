@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Interfaces
-permalink: /basics/interfaces/
+permalink: /hardware/interfaces/
 ---
-
-After you learned...
 
 General Purpose Input / Output (GPIO)
 -------------------------------------

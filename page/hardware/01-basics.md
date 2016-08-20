@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Electrical Basics
-permalink: /basics/electricity/
+title: Hardware Basics
+permalink: /hardware/basics/
 ---
 
 
