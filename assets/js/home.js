@@ -10,8 +10,10 @@ $(function() {
     $('map').imageMapResize();
 
     buildScrollingContentNavigation();
+    makeImagesPopup();
 });
 
+/* SCROLING CONTENT NAV */
 function buildScrollingContentNavigation() {
     var index = 0;
     var sidenav = "";
@@ -37,4 +39,19 @@ function setAnchor(element, id) {
 
 function buildLink(index, text) {
     return "<a href='#anchor-" + index + "'>" + text + "</a><br />";
+}
+
+/* CONTENT IMAGE POPUPS */
+function makeImagesPopup() {
+    $(".post img").each(function() {
+        if ($(this).attr("id") == null) {
+            var path = $(this).attr("src");
+            var newHtml = '<a class="fancybox" href="'+path+'"><img src="'+path+'" /></a>';
+            $(this).replaceWith(newHtml);
+        }
+    });
+
+    $(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
 }
