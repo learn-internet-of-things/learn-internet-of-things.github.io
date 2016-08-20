@@ -5,7 +5,7 @@ category: home
 order: 1
 ---
 
-***This site is still under construction.***
+***The whole site is still under construction.***
 
 What is that?
 -------------
