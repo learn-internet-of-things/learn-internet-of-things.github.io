@@ -44,9 +44,11 @@ function buildLink(index, text) {
 /* CONTENT IMAGE POPUPS */
 function makeImagesPopup() {
     $(".post img").each(function() {
-        var path = $(this).attr("src");
-        var newHtml = '<a class="fancybox" href="'+path+'"><img src="'+path+'" /></a>';
-        $(this).replaceWith(newHtml);
+        if ($(this).attr("id") == null) {
+            var path = $(this).attr("src");
+            var newHtml = '<a class="fancybox" href="'+path+'"><img src="'+path+'" /></a>';
+            $(this).replaceWith(newHtml);
+        }
     });
 
     $(document).ready(function() {
