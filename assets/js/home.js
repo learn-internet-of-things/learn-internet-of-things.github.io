@@ -19,12 +19,19 @@ $(function() {
 function buildScrollingContentNavigation() {
     var index = 0;
     var sidenav = "";
+    var hasElements = false;
     $("h2").each(function() {
         setAnchor($(this), index);
         sidenav += buildLink(index, $(this).html());
+        hasElements = true;
     });
+
     $("#sliding-content-nav .panel-body").html(sidenav);
     $("#sliding-content-nav").stick_in_parent({offset_top: 15});
+
+    if (!hasElements) {
+        $("#sliding-content-nav").css("opacity", ".0");
+    }
 }
 
 function setAnchor(element, id) {
