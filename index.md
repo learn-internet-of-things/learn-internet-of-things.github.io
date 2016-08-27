@@ -7,7 +7,7 @@ order: 1
 
 ***The whole site is still under construction.***
 
-What a device is that?
+What a Device is that?
 ----------------------
 
 The presented board is a device for the Internet of Things (IoT). 
@@ -24,7 +24,7 @@ The battery on the back (not shown) ensures that you can take it where ever you 
 Depending on the application even years of battery life would be possible.
 And when the battery level is getting low, you can simply recharge it by connecting it to an USB port.
 
-What should I use this devide for?
+What should I use this Device for?
 ----------------------------------
 
 You don't know what to do with with a temperature and orientation sensor?

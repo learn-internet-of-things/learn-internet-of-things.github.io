@@ -6,7 +6,7 @@ permalink: /software/
 
 Hallo Welt
 
-{% highlight c %}
+```c
 /**
  * @file   es2812_rainbow.c
  * @author Ondřej Hruška, 2016
@@ -273,5 +273,4 @@ void user_init(void)
     //xTaskCreate(demo_single, (signed char *)"demo_single", 256, NULL, 2, NULL);
     //xTaskCreate(blinkenTask, (signed char *)"blinkenTask", 256, NULL, 2, NULL);
 }
-
-{% endhighlight %}
+```
