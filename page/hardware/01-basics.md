@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Electrical Basics
-permalink: /basics/electricity/
+title: Hardware Basics
+permalink: /hardware/basics/
 ---
 
 
@@ -94,9 +94,21 @@ Schematics
 How to read...
 
 
+Integrated Circuit's Output Stages
+----------------------------------
+
+![Push-Pull](/media/hardware/basics/push-pull.png)
+
+![Tristate](/media/hardware/basics/tristate.png)
+
+![Open-Collector](/media/hardware/basics/open-collector.png)
+
+
 References
 ----------
 
 https://learn.sparkfun.com/tutorials/what-is-electricity
 
 https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law
+
+https://www.mikrocontroller.net/articles/Ausgangsstufen_Logik-ICs
