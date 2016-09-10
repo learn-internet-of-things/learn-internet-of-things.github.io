@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Design
+title: Designing the Hardware
 permalink: /hardware/design/
 ---
 
-Designing the Hardware
-======================
+CAD Software
+------------
 
 The hardware will be designed with [Eagle](http://www.cadsoft.de/download-eagle/eagle-freeware/).
 Other options exist.
@@ -37,3 +37,8 @@ That's the only way to be sure not to copy the mistakes of others.
 Before starting with adding devices to your schematic, let's create an own device - the ESP8266EX.
 
 Switch to the control panel window and select *File*, *New* and *Library*.
+
+Microcontroller
+---------------
+
+![ESP8266 Microcontroller](/media/hardware/design/mcu.png)
