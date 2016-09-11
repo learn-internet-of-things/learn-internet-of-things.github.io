@@ -211,8 +211,54 @@ table {
     max-height: 40em;
 }
 
+body {
+    position: relative;
+}
+
+#content {
+    position: relative;
+}
+
 #sliding-content-nav {
-    float: right;
-    width: 20em;
-    font-size: 0.8em;
+    position: absolute;
+    width: 15em;
+    right: 20px;
+    top: 0;
+
+    .panel-body, .panel-body * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    ul li a, .panel-footer {
+        padding: 6px 8px !important;
+        border-bottom: 1px solid #ddd;
+    }
+
+    ul li:last-child a {
+        border-bottom: none !important;
+    }
+
+    ul .active a {
+        background: #2c3e50;
+        color: white;
+    }
+}
+
+.affix {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+}
+
+h2 .anchorLink {
+    opacity: 0;
+    display: inline-block;
+    padding-left: 10px;
+    color: black;
+    font-size: .7em;
+}
+
+h2:hover .anchorLink {
+    opacity: 1;
 }

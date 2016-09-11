@@ -474,8 +474,6 @@ ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
 
-
-
 a {
     text-decoration: none!important;
 }
@@ -484,4 +482,11 @@ a {
 {
     margin: 0 auto;
     display: block;
+}
+
+@media (max-width: 768px) {
+    article {
+        padding: 0px !important;
+        margin: 0px !important;
+    }
 }
