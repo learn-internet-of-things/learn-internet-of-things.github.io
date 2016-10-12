@@ -16,7 +16,6 @@ dl, dd, ol, ul, figure {
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
-    background-color: $background-color;
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -211,44 +210,58 @@ table {
     max-height: 40em;
 }
 
-body {
-    position: relative;
-}
-
 #content {
     position: relative;
+    background: #F9F9F9;
+    padding-top: 50px;
+    min-height: 100%;
+    box-shadow: 0 0 15px gray;
+    z-index: 10;
 }
 
-#sliding-content-nav {
-    position: absolute;
-    width: 15em;
-    right: 20px;
-    top: 0;
-
-    .panel-body, .panel-body * {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    ul li a, .panel-footer {
-        padding: 6px 8px !important;
-        border-bottom: 1px solid #ddd;
-    }
-
-    ul li:last-child a {
-        border-bottom: none !important;
-    }
-
-    ul .active a {
-        background: #2c3e50;
-        color: white;
-    }
+#sidebar-affix {
+    margin-top: 20px;
 }
 
 .affix {
-    position: fixed !important;
-    top: 20px !important;
-    right: 20px !important;
+    width: 200px;
+}
+
+#sliding-content-nav {
+    border-left: none;
+    background: white;
+    margin-top: 20px;
+    box-shadow: -3px 3px 15px gray;
+
+    .title {
+        padding: 10px 0px;
+        font-weight: bold;
+        span {
+            padding: 0 10px;
+        }
+    }
+
+    a {
+        padding: 5px 10px;
+        border-top: 1px solid #2C3E50;
+        display: block;
+        color: #2C3E50;
+    }
+
+    .to-top a {
+        font-style: italic;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    ul {
+        margin: 0px;
+    }
+
+    ul .active a {
+        background: #2C3E50;
+        color: silver;
+    }
 }
 
 h2 .anchorLink {
@@ -261,4 +274,14 @@ h2 .anchorLink {
 
 h2:hover .anchorLink {
     opacity: 1;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.navbar-default {
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 5px gray;
 }

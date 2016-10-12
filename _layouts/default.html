@@ -1,50 +1,46 @@
 <!DOCTYPE html>
 <html>
+    {% include head.html %}
 
-  {% include head.html %}
+    <body data-spy="scroll" data-target="#data-spy" data-offset="200">
+        <div id="white-bg-dimmer"></div>
+        <div class="container" id="content-container">
+            {% include topbar-nav.html %}
+            <div id="#top"></div>
 
-  <body data-spy="scroll" data-target="#data-spy" data-offset="20">
-    <div id="#top"></div>
+            <div class="row">
+                <div class="col-sm-2 hidden-xs sidebar">
+                    <div id="affix-helper"></div>
+                    <div data-spy="affix" id="sidebar-affix">
+                        {% include header.html %}
+                        {% include sidebar-nav.html %}
+                    </div>
+                </div>
 
-    <div class="col-sm-2 hidden-xs sidebar" style="min-height: 100%;">
-        {% include header.html %}
+                <div id="content" class="col-sm-8">
+                    {{ content }}
+                </div>
+                
+                <div class="col-sm-2" style="padding: 0px;">
+                    <!-- scroll-spy -->
+                    <div data-spy="affix">
+                        <div id="sliding-content-nav" class="visible-lg-block">
+                            <div class="title"><span class="glyphicon glyphicon-list"></span>Sections</div>
+                            <div class="" id="data-spy">
+                                <ul id="scrollSpyList" class="nav" role="tablist">
+                                </ul>  
+                            </div>
+                            <div class="to-top"><a href="#top">Back to top</a></div>
+                        </div>
 
-        {% include sidebar-nav.html %}
-    </div>
-
-    {% include topbar-nav.html %}
-
-    <div id="content" class="col-sm-10 col-sm-offset-2">
-        <div data-spy="affix" data-offset-top="60" id="sliding-content-nav" class="panel panel-default visible-lg-block">
-            <div class="panel-heading"><h3 class="panel-title">Content Navigation</h3></div>
-            <div class="panel-body" id="data-spy">
-                <ul id="scrollSpyList" class="nav" role="tablist">
-                </ul>  
+                        <div id="sliding-content-nav" class="visible-lg-block">
+                            <div class="title"><span class="glyphicon glyphicon-copyright-mark"></span>Licence</div>
+                            <div class="to-top"><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">tutorials are CC BY-NC-SA 3.0</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="panel-footer"><a href="#top">Back to top</a></div>
+            <!-- {% include footer.html %} -->
         </div>
-        
-
-        {{ content }}
-    </div>
-    
-    <!--
-    <div class="container">
-      <div class="page-content">
-        <div class="row">
-          <div class="col-md-3">
-          </div>
-          <div class="col-md-9">
-            <div class="wrapper">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
-
-    <!-- {% include footer.html %} -->
-
-  </body>
-
+    </body>
 </html>

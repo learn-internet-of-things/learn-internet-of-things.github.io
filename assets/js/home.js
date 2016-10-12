@@ -11,6 +11,11 @@ $(function() {
     });
 
     $('map').imageMapResize();
+
+    $(".affix").width($("#affix-helper").width());
+    $(window).resize(function() {
+        $(".affix").width($("#affix-helper").width());
+    });
 });
 
 function loadHeadingsIntoScrollSpy() {
