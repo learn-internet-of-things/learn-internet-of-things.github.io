@@ -7,6 +7,20 @@ permalink: /hardware/interfaces/
 General Purpose Input / Output (GPIO)
 -------------------------------------
 
+### Output Stages
+
+**Push-Pull**
+
+![Push-Pull](/media/hardware/basics/push-pull.png)
+
+**Tristate**
+
+![Tristate](/media/hardware/basics/tristate.png)
+
+**Open Collector**
+
+![Open-Collector](/media/hardware/basics/open-collector.png)
+
 ADC / DAC
 ---------
 
@@ -84,10 +98,5 @@ Serial
 References
 ----------
 
-[^datasheet]: [ESP8266EX Datasheet](http://espressif.com/en/file/957/download?token=qg825sq2)
-[^no-hardware-i2c]: [Does ESP8266 actually have hardware I2C?](http://bbs.espressif.com/viewtopic.php?t=1032)
-References
-----------
-
-[^datasheet]: [ESP8266EX Datasheet](http://espressif.com/en/file/957/download?token=qg825sq2)
+[^datasheet]: <http://espressif.com/en/file/957/download?token=qg825sq2>
 [^no-hardware-i2c]: [Does ESP8266 actually have hardware I2C?](http://bbs.espressif.com/viewtopic.php?t=1032)

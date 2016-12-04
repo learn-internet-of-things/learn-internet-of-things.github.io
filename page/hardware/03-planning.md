@@ -14,14 +14,14 @@ At the same time, this does not mean that you are not allowed to build prototype
 But if you do that because things are not clear, a preferable way might be to find existing and working similar solutions in the internet.
 
 
-Technical Specification of the Hardware
----------------------------------------
+Hardware Specification
+--------------------------------
 
 A good start is to have a clear overview over the capabilities of the hardware that should be used.
 In general one needs to know what peripherals should be used to find a microprocessor that meets the requirements.
 In this case, the microprocessor ESP8266 is chosen mainly due to its unbeatable price and its Wi-Fi support.
-The fact that it is capable to meet our requirements is anticipated, you will get an idea to find a processor for your requirements anyway.
-You can find more details for the reasons choosing this device in my related master's thesis.
+The fact that it is capable to meet our requirements is anticipated, you will get an idea of how to find a processor for your requirements anyway.
+You can find more details for the reasons choosing this device in the master's thesis in the download section.
 
 The ESP8266 is a bit complicated in gathering all the needed data because Espressif Systems, the manufactor of the chip, keeps itself covered or omits a lot of documentation.
 This is bothersome on the one hand, but helps to reflect on the important things.
@@ -30,7 +30,7 @@ You will find the information that the chip "integrates an enhanced version of T
 Cadence, that is the new name of the Tensilica processors manufacturer, declares them as "based on an industry-standard architecture" and "smaller than the ARM7 or Cortex-M3 cores" based on the chosen manufacturing process.
 Absolute values for the provided memory are hard to find.
 The chip possibly includes 64 KB of instruction RAM, 96 KB of data RAM and 64 KB of ROM.
-Aroung 50 KB of these are accessible in heap and data section when ESP8266 is working under the station mode and is connected to the router.
+Around 50 KB of these are accessible in heap and data section when ESP8266 is working under the station mode and is connected to the router.
 The ROM is not programmable, therefore, user programs must be stored in an external SPI flash that can have a size up to 16 MB (128 Mbit).
 
 Furthermore the chip has 16 GPIO's that are multiplexed with other functions like PWM, SDIO, SPI, UART or I2S.
@@ -196,6 +196,9 @@ https://github.com/knewron-technologies/1btn
 https://github.com/nkolban/esplibs
 
 RTC https://blog.the-jedi.co.uk/2016/01/09/led-matrix-alarm-clock-update/
+
+Downloads
+---------
 
 References
 ----------
