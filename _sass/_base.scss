@@ -280,3 +280,9 @@ div.fancybox-title-inside-wrap {
     font-weight: 400;
     line-height: 1.5;
 }
+
+a.fancybox-image-zoom {
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+}

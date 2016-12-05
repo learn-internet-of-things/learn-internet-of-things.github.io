@@ -33,28 +33,30 @@ function loadHeadingsIntoScrollSpy() {
 /* CONTENT IMAGE POPUPS */
 function makeImagesPopup() {
     $(".post img").each(function() {
-        var width = $(this).width();
-        var parentWidth = $(this).parent().width();
-        if ($(this).attr("id") == null && width == parentWidth) {
+        var clientWidth = $(this).get(0).clientWidth;
+        var imageWidth = $(this).get(0).naturalWidth;
+        if ($(this).attr("id") == null && clientWidth < imageWidth) {
             var path = $(this).attr("src");
             var newHtml = '<a class="fancybox" href="'+path+'"';
             if ($(this).next().is("em")) {
                 var caption = $(this).next().text();
                 newHtml += 'caption="'+caption+'"';
             }
-            newHtml += '><img src="'+path+'" /></a>';
+            newHtml += '><img src="'+path+'" width="'+clientWidth+'px" /></a>';
             $(this).replaceWith(newHtml);
         }
     });
 
     $(document).ready(function() {
         $(".fancybox").fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+            tpl: {
+                image: '<a class="fancybox-image-zoom" href="javascript:$.fancybox.toggle();"><img class="fancybox-image" src="{href}" alt="" /></a>'
+            },
             helpers: {
                 title: {
                     type: 'inside'
-                },
-                overlay: {
-                    showEarly: false
                 }
             },
             beforeLoad: function() {
