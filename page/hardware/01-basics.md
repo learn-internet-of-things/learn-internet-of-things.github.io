@@ -134,26 +134,50 @@ For this purpose, they draw auxiliary energy from an additional power supply or 
 
 The following list provides an overview of typical and important components in the context of embedded systems and the Internet of Things.
 
-### Power Sources (active)
+### Power Sources
 
 Power sources are active components as they provide energy to a circuit.
 For mobile devices, many different types of (rechargeable) batteries that provide direct current (DC) are the state of the art.
 Stationary devices, on the other hand, can be powered by a power supply that that converts alternating current (AC) from the electrical grid to direct current (DC).
 Depending on the application area and the environment, however, other power sources such as solar cells are also conceivable.
 
+![Power Source Symbol](/media/hardware/basics/powersource-symbol.png)
+*Symbol of a DC power supply and a 1-cell battery*
+
 In digital schematics mainly distinction between power source, often named VCC (positive pole) and ground, often named GND (negative pole).
 
-### Resistors (passive)
+### Resistors
+ 
+(passive)
 
 Wires just like resistors, ...
 
-### Capacitors (passive)
+![Resistor Symbol](/media/hardware/basics/resistor-symbol.png)
+*EU and US symbol of a resistor*
 
-### Inductors (passive)
+### Capacitors
 
-### Transistors (active)
+Capacitors are passive components and allow to make use of capacitance.
 
-### Diodes (active)
+![Capacitor Symbol](/media/hardware/basics/capacitor-symbol.png)
+*EU and US symbol of a capacitor*
+
+...
+
+### Inductors
+
+passive
+
+![Inductor Symbol](/media/hardware/basics/inductor-symbol.png)
+*EU and US symbol of a inductor*
+
+### Transistors
+
+active
+
+### Diodes
+
+active
 
 Diode
 Schottky Diode
