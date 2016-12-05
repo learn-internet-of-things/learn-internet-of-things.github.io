@@ -33,14 +33,33 @@ function loadHeadingsIntoScrollSpy() {
 /* CONTENT IMAGE POPUPS */
 function makeImagesPopup() {
     $(".post img").each(function() {
-        if ($(this).attr("id") == null) {
+        var width = $(this).width();
+        var parentWidth = $(this).parent().width();
+        if ($(this).attr("id") == null && width == parentWidth) {
             var path = $(this).attr("src");
-            var newHtml = '<a class="fancybox" href="'+path+'"><img src="'+path+'" /></a>';
+            var newHtml = '<a class="fancybox" href="'+path+'"';
+            if ($(this).next().is("em")) {
+                var caption = $(this).next().text();
+                newHtml += 'caption="'+caption+'"';
+            }
+            newHtml += '><img src="'+path+'" /></a>';
             $(this).replaceWith(newHtml);
         }
     });
 
     $(document).ready(function() {
-		$(".fancybox").fancybox();
+        $(".fancybox").fancybox({
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                overlay: {
+                    showEarly: false
+                }
+            },
+            beforeLoad: function() {
+                this.title = $(this.element).attr('caption');
+            }
+        });
 	});
 }
