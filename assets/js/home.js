@@ -1,8 +1,8 @@
 
-$(function() {
+$(document).ready(function() {
     makeImagesPopup();
     loadHeadingsIntoScrollSpy();
-   
+
     $(document).tooltip({
         position: {
             my: "left+10 bottom+60"
@@ -47,21 +47,19 @@ function makeImagesPopup() {
         }
     });
 
-    $(document).ready(function() {
-        $(".fancybox").fancybox({
-            prevEffect: 'none',
-            nextEffect: 'none',
-            tpl: {
-                image: '<a class="fancybox-image-zoom" href="javascript:$.fancybox.toggle();"><img class="fancybox-image" src="{href}" alt="" /></a>'
-            },
-            helpers: {
-                title: {
-                    type: 'inside'
-                }
-            },
-            beforeLoad: function() {
-                this.title = $(this.element).attr('caption');
+    $(".fancybox").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        tpl: {
+            image: '<a class="fancybox-image-zoom" href="javascript:$.fancybox.toggle();"><img class="fancybox-image" src="{href}" alt="" /></a>'
+        },
+        helpers: {
+            title: {
+                type: 'inside',
             }
-        });
-	});
+        },
+        beforeLoad: function() {
+            this.title = $(this.element).attr('caption');
+        }
+    });
 }
