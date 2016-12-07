@@ -173,7 +173,20 @@ passive
 
 ### Transistors
 
-active
+active, transfer resistor, bipolar and unipolar
+
+Bipolar transistors are further divided into NPN and PNP transistors, of which the PNP transistor is only required in rare cases.
+The NPN transistor, on the other hand, is often used, because it allows strong currents to be switched with weak currents.
+Both bipolar transistors have three terminals, which are called base (B), collector (C) and emitter (E).
+In order to switch a strong load current, which then flows from the collector to the emitter, a weak control current must be applied to the base.
+Bipolar transistors are self-locking, ie the circuit between the collector and the emitter is interrupted when no current is applied to the base.
+Since both the current and the voltage at the base can be significantly smaller than at the collector, bipolar transistors provide an amplifier functionality.
+
+![Bipolar Transistor Symbol](/media/hardware/basics/bipolartransistor-symbol.png)
+*Symbol of a NPN and PNP transistor*
+
+![Bipolar Transistor Schema](/media/hardware/basics/bipolartransistor-schema.png)
+*Schema of a NPN and PNP transistor*
 
 ### Diodes
 
