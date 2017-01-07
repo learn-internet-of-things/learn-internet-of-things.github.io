@@ -17,7 +17,7 @@ However, it requires a GNU/POSIX system like Linux.
 
 The complete setup process is described in the project's readme on GitHub.
 
-https://github.com/liotio/esp-easy-sdk
+<https://github.com/liotio/esp-easy-sdk>
 
 The build of the toolchain takes about 30 to 60 minutes, depending on your system.
 
@@ -33,12 +33,42 @@ app
 +--- Makefile
 ```
 
+Copy the following code into the `app.c` file.
+It contains the `user_init` method that represents the starting point of the firmware.
+Additionally, Wi-Fi will simply be turned off.
+
+```c
+#include "osapi.h"
+#include "user_interface.h"
+
+void user_init()
+{
+    wifi_set_opmode(NULL_MODE);
+}
+```
+
+The `user_config.h` file only has to be there, for now there is no content required.
+
+For now, the `Makefile` can be extremely simple.
+Only a program name has to be set (which has no actual impact on the firmware itself) and the common build Makefile of the `esp-easy-sdk` has to be included.
+
+```
+PROGRAM = app
+include $(ESP_EASY_SDK)/common.mk
+```
+
+Now, the firmware can be build simply calling:
+
+```bash
+make
+```
+
 ### Memory Management
 
 The ESP8266EX has relatively little memory, but provides a sophisticated mechanism to deal with it.
 This section presents in detail the memory management, the mode of operation and their impact.
 
-Like almost all microcontrollers the ESP8266EX uses a memory structure that is based on the Harvard architecture, which means that data and instructions (“code”) are stored in separated segments.
+Like almost all microcontrollers the ESP8266EX uses a memory structure that is based on the Harvard architecture, which means that data and instructions (code) are stored in separated segments.
 Because often the entire instructions cannot be held in main memory, they can be stored (uncached) in the much larger but slower external flash memory.
 The data segment is abbreviated subsequently only by DRAM, the segment for cached instructions is called IRAM and the uncached instructions segment is named IROM.
 
@@ -74,24 +104,51 @@ MEMORY
 }
 ```
 
-These declarations indicate that the application can only use 14000<sub>16</sub> = 81920<sub>10</sub> bytes of RAM, 8000<sub>16</sub> = 32768$<sub>10</sub> bytes of IRAM and depending on the size of the flash memory and in use with the provided linker scripts from 2B000<sub>16</sub> = 176128<sub>10</sub> to E0000<sub>16</sub> = 917504<sub>10</sub> bytes of IROM.
+These declarations indicate that the application can only use 14000<sub>16</sub> = 81920<sub>10</sub> bytes of RAM, 8000<sub>16</sub> = 32768<sub>10</sub> bytes of IRAM and depending on the size of the flash memory and in use with the provided linker scripts from 2B000<sub>16</sub> = 176128<sub>10</sub> to E0000<sub>16</sub> = 917504<sub>10</sub> bytes of IROM.
 
 The values shown are also the minimum values that could be achieved with own tests.
 In this case, the application consisted only of the `user_init` function that is used as the `call_user_start` entry symbol and of the necessary (empty) `user_config.h` file.
 The libraries that have to be linked at least, are libgcc and the SDK libraries libmain, libnet80211, liblwip, libphy, libpp and libwpa.
-The output shows that with 25.5 of 80 kB there are only 32% of the DRAM in use, but with 23.4 of 32 kB already 73% of the IRAM.%
+The output shows that with 25.5 of 80 kB there are only 32% of the DRAM in use, but with 23.4 of 32 kB already 73% of the IRAM.
 
-What instructions are held in I\acs{RAM} or I\acs{ROM} can be defined precisely by the user within the above limits.
-Methods that cope with a lower execution speed can be denoted with the `ICACHE_FLASH_ATTR` macro that is used for the assignment to the \texttt{.irom0.text} section.
-If the I\acs{RAM} is no longer sufficient, the `-DICACHE_FLASH` flag can be added to the compiler flags, by which all denoted user methods are now moved to the I\acs{ROM} segment.
-This can also be used to affect variables, but static variables always require additionally memory in \acs{RAM}.
+What instructions are held in IRAM or IROM can be defined precisely by the user within the above limits.
+Methods that cope with a lower execution speed can be denoted with the `ICACHE_FLASH_ATTR` macro that is used for the assignment to the `.irom0.text` section.
+If the IRAM is no longer sufficient, the `-DICACHE_FLASH` flag can be added to the compiler flags, by which all denoted user methods are now moved to the IROM segment.
+This can also be used to affect variables, but static variables always require additionally memory in RAM.
 The same applies to global variables, whereas static declared global variables do not need the additional memory twice.
 
-Eclipse Download & Installation
--------------------------------
+The call of the `user_init` method in the following code is done on the slower IROM whereas the call of the `sys_init_done_cb` callback method is done on the fast IRAM.
 
-Create a Makefile Project
--------------------------
+```c
+#include "osapi.h"
+#include "user_interface.h"
+
+void sys_init_done_cb()
+{
+    wifi_set_opmode(NULL_MODE);
+}
+
+void ICACHE_FLASH_ATTR user_init()
+{
+    system_init_done_cb(sys_init_done_cb);
+}
+```
+
+Overall, it becomes clear that the ESP8266EX is suitable only for very small applications, if the instructions must be stored completely in IRAM.
+If lower speeds can be taken into account, this Wi-Fi-integrated MCU is a good choice.
+
+
+Eclipse IDE Setup
+-----------------
+
+There are different Integrated Development Environments (IDE's) and editors that can be used for programming and building.
+A popular choice is the Eclipse IDE with the C/C++ Developer Tools.
+Simply download it from the following page and use the installer to install it.
+
+<http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/neon2>
+
+
+### Create a Makefile Project
 
 ![Create a new Makefile project](/media/software/sdk/ide/makefile_project.png)
 
@@ -103,18 +160,17 @@ Create a Makefile Project
 
 Same way create new directory `include`, the file `user_config.h` in the just created `include` directory and the file `app.c` in the project root directory.
 
-Add Project's Include Paths
----------------------------
+
+### Add Project's Include Paths
 
 ![Edit the new Makefile](/media/software/sdk/ide/path_sdk_include.png)
 
 Same way add directory path `/app/include/`, but this time also select the option "Is a workspace path".
 
 
-Write a simple Program
-----------------------
+### Write a simple Program
 
-Now fill `app.c` with code. The file `user_config.h` must only exist, but can be empty.
+Now fill `app.c` with code again as above. The file `user_config.h` again must only exist, but can be empty.
 
 ```c
 #include "osapi.h"
@@ -126,10 +182,11 @@ void user_init()
 }
 ```
 
+Furthermore, again fill the Makefile with the code shown in the following image.
+
 ![Edit the new Makefile](/media/software/sdk/ide/app_code.png)
 
-Create Make Targets
--------------------
+### Create Make Targets
 
 ![Create a new Make target](/media/software/sdk/ide/make_target.png)
 
