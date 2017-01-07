@@ -249,23 +249,21 @@ LED and LCD displays for stationary devices.
 References
 ----------
 
-[^voltage]: <https://en.wikipedia.org/wiki/Voltage>
+[^voltage]: [Wikipedia - Voltage](https://en.wikipedia.org/wiki/Voltage)
 
-[^current]: <https://en.wikipedia.org/wiki/Electric_current>
+[^current]: [Wikipedia - Electric Current](https://en.wikipedia.org/wiki/Electric_current)
 
-[^power]: <https://en.wikipedia.org/wiki/Electric_power>
+[^power]: [Wikipedia - Electric Power](https://en.wikipedia.org/wiki/Electric_power)
 
-[^resistance]: <https://en.wikipedia.org/wiki/Electrical_resistance_and_conductance>
+[^resistance]: [Wikipedia - Electrical Resistance and Conductance](https://en.wikipedia.org/wiki/Electrical_resistance_and_conductance)
 
-[^ohmslaw]: <https://en.wikipedia.org/wiki/Ohm's_law>
+[^ohmslaw]: [Wikipedia - Ohm's Law](https://en.wikipedia.org/wiki/Ohm's_law)
 
-[^capacitance]: <https://en.wikipedia.org/wiki/Capacitance>
+[^capacitance]: [Wikipedia - Capacitance](https://en.wikipedia.org/wiki/Capacitance)
 
-[^network]: <https://en.wikipedia.org/wiki/Electrical_network>
+[^network]: [Wikipedia - Electrical Network](https://en.wikipedia.org/wiki/Electrical_network)
 
-[^component]: <https://en.wikipedia.org/wiki/Electronic_component>
-
-[^]: <>
+[^component]: [Wikipedia - Electronic Component](https://en.wikipedia.org/wiki/Electronic_component)
 
 <!---
 
