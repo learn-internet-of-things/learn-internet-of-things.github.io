@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Planning
+title: Hardware Planning
 permalink: /hardware/planning/
 ---
 

@@ -83,6 +83,16 @@ $$
 Since the formula can also easily be changed to an equation for $$R$$ and $$I$$, it can be applied in many ways.
 Strictly speaking, this formula is only true on a small scale and for a few substances, however it can be used for a basic understanding of the correlation of voltage, current and resistance.
 
+### Electric field
+
+$$
+E = \frac{U}{d}
+$$
+
+$$
+[E] = \frac{V}{m}
+$$
+
 ### Capacitance
 
 Electrical capacitance is the ability of a body to store an electrical charge.
@@ -188,6 +198,17 @@ Since both the current and the voltage at the base can be significantly smaller 
 ![Bipolar Transistor Schema](/media/hardware/basics/bipolartransistor-schema.png)
 *Schema of a NPN and PNP transistor*
 
+MOS-FET
+
+Selbstsperrend, selbstleitend
+
+* P-Kanal MOS-FET wird durchgeschaltet, wenn 0 an Gate
+
+* N-Kanal MOS-FET wird durchgeschaltet, wenn 1 an Gate
+
+![MOSFET Symbol](/media/hardware/basics/mosfet-symbol.png)
+*Symbol of an N-channel and P-channel MOSFET, enhancement-mode above, depletion-mode below*
+
 ### Diodes
 
 active
@@ -199,6 +220,11 @@ Photodiode
 
 As an illustrative example is a diode that transmits current in only one direction.
 See http://cdn2.rare-earth-magnets.com/images/content/conventional-versus-electron-flow-4.jpg
+
+Flyback / Flywheel diode
+On Inductive loads
+https://en.wikipedia.org/wiki/Flyback_diode
+
 
 ### Integrated Circuits (active)
 

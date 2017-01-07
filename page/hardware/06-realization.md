@@ -1,5 +1,7 @@
 ---
 layout: page
-title: Realization
+title: Hardware Realization
 permalink: /hardware/realization/
 ---
+
+...

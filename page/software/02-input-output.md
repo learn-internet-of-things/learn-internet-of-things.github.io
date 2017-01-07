@@ -1,5 +1,5 @@
 ---
 layout: page
-title: General Purpose Input / Output
+title: Input / Output
 permalink: /software/input-output/
 ---
