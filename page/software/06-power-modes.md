@@ -102,7 +102,7 @@ os_sprintf(payload, "{ \"battery\": %u, \"adc\": %u }", bat_pct, adc);
 MQTT_publish(topic, payload, strlen(payload), 0, 0);
 ```
 
-Without any low-power modes about 6 hours runtime with the battery.
+Without any low-power modes about 7 hours runtime with a 700 mAh battery.
 
 
 References
