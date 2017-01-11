@@ -59,7 +59,7 @@ void user_start()
 General-Purpose I/O
 -------------------
 
-...
+...[^non-os-sdk-api]
 
 ```c
 #define GPIO_OUTPUT_SET(gpio_no, bit_value) \
@@ -181,7 +181,7 @@ void I2C_init()
 When the GPIO's are configured as needed, the actual I2C driver can be implemented.
 As stated in the I2C specification, the I2C start sequence looks as follows:
 
-[I2C Start Sequence]
+[I2C Start Sequence][^i2c-spec]
 
 The related implementation can simply be written down using the introduced macros.
 
@@ -208,3 +208,11 @@ uint8 I2C_start(
     return I2C_write((address << 1) | (readwrite & 1));
 }
 ```
+
+
+Reference
+---------
+
+[^non-os-sdk-api]: [Espressif - ESP8266 Non-OS SDK API Reference](/media/liot_esp8266_env/datasheets/esp8266_non_os_sdk_api_reference.pdf)
+
+[^i2c-spec]: [I2C-Bus Specification and User Manual](http://cache.nxp.com/documents/user_manual/UM10204.pdf)
