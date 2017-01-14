@@ -7,25 +7,32 @@ permalink: /hardware/interfaces/
 General-Purpose Input/Output
 ----------------------------
 
-### Output Stages
+Different types of output stages
 
-**Push-Pull**
-
-![Push-Pull](/media/liot_esp8266_env/hardware/interfaces/push-pull.png)
-
-**Tristate**
-
-![Tristate](/media/liot_esp8266_env/hardware/interfaces/tristate.png)
-
-**Open Collector**
-
-![Open-Collector](/media/liot_esp8266_env/hardware/interfaces/open-collector.png)
+* Push-Pull
+* Tristate
+* Open Collector
 
 
-Analog-to-Digital Converter
----------------------------
+### Push-Pull
 
-Also Digital-to-Analog Converter...
+![Push-Pull](/media/liot_esp8266_env/hardware/interfaces/push-pull.png){:width="75%"}
+
+
+### Tristate
+
+![Tristate](/media/liot_esp8266_env/hardware/interfaces/tristate.png){:width="75%"}
+
+
+### Open Collector
+
+![Open-Collector](/media/liot_esp8266_env/hardware/interfaces/open-collector.png){:width="75%"}
+
+
+Analog-Digital Conversion
+-------------------------
+
+ADC / DAC
 
 
 Universal Asynchronous Receiver Transmitter

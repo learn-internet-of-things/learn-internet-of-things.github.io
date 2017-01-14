@@ -5,16 +5,20 @@ permalink: /hardware/layout/
 ---
 
 The exact technical implementation depends on the applied CAD software.
-On this page, the “Cadsoft EAGLE PCB Design Software” was used but this plays a subordinate role in the final outcome.
+On this page, the “Cadsoft EAGLE PCB Design”[^eagle] software was used, but this plays a subordinate role in the final outcome.
 
-Sparkfun offers a good tutorial for a first simple board layout.
-See https://learn.sparkfun.com/tutorials/using-eagle-board-layout
+In order to get started, first PCB basics have to be learned.
+Sparkfun offers good tutorials for custom footprints and a first simple board layout:
 
 * [Sparkfun - PCB Basics](https://learn.sparkfun.com/tutorials/pcb-basics)
 
 * [Sparkfun - Designing PCBs: SMD Footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints)
 
 * [Sparkfun - Designing PCBs: Advanced SMD](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd)
+
+
+Board Creation
+--------------
 
 In the first step a package must be created for each symbol of the circuit diagram.
 It must be selected between the through-hole or surface-mounting technology, if applicable. 
@@ -52,4 +56,18 @@ After the PCB has been assembled, the final board will look like as illustrated 
 If no errors have been made, next, the implementation of the software can be started.
 
 ![LIOT_ESP8266_ENV Board Documentation](/media/liot_esp8266_env/liot_esp8266_env-board-docu.png){:width="40%"}
-*LIOT_ESP8266_ENV Board Documentation*
+*LIOT_ESP8266_ENV Board Documentation [^board]*
+
+
+Gerber File Generation
+----------------------
+
+...
+
+
+References
+----------
+
+[^eagle]: [Cadsoft - EAGLE PCB Design Software](https://cadsoft.io)
+
+[^board]: [LIOT - LIOT_ESP8266_ENV Board (Eagle)](/media/liot_esp8266_env/documents/liot_esp8266_env.brd)

@@ -228,10 +228,11 @@ The power supply pins for 3.3 V and GND, as well as for the battery voltage are 
 Complete Design
 ---------------
 
-TBD
+![LIOT_ESP8266_ENV Schematic](/media/liot_esp8266_env/liot_esp8266_env-schematic.png)
+*LIOT_ESP8266_ENV Schematic [^schematic]*
 
 
 References
 ----------
 
-TBD
+[^schematic]: [LIOT - LIOT_ESP8266_ENV Schematic (Eagle)](/media/liot_esp8266_env/documents/liot_esp8266_env.sch)
