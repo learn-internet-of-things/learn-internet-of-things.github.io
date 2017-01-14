@@ -17,7 +17,7 @@ However, it requires a GNU/POSIX system like Linux.
 
 The complete setup process is described in the project's readme on GitHub.
 
-<https://github.com/liotio/esp-easy-sdk>
+* <https://github.com/liotio/esp-easy-sdk>
 
 The build of the toolchain takes about 30 to 60 minutes, depending on your system.
 

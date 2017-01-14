@@ -38,7 +38,7 @@ Furthermore the chip has 16 GPIO's that are multiplexed with other functions lik
 For a complete list, you can see the table below, that is mainly taken from the ESP8266EX datasheet.
 The pin description is fitted a bit to the applications that are really used.
 
-![ESP8266EX Pin Description](/media/hardware/planning/pin-description.png)
+![ESP8266EX Pin Description](/media/liot_esp8266_env/documents/esp8266ex-pin-description.png)
 *ESP8266EX Pin Description [^pin-description]*
 
 
@@ -98,15 +98,15 @@ RF: Sub-1-Ghz (Sigfox), Wi-Fi, Bluetooth, GSM
 
 GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
  
-![LIOT_ESP8266_ENV Pin Assignment](/media/liot_esp8266_env/hardware/planning/pin-assignment.png)
+![LIOT_ESP8266_ENV Pin Assignment](/media/liot_esp8266_env/documents/liot_esp8266_env-pin-assignment.png)
 *LIOT_ESP8266_ENV Pin Assignment [^pin-assignment]*
 
 
 References
 ----------
 
-[^pin-description]: [LIOT - ESP8266EX Pin Description List (Excel)](/media/liot_esp8266_env/hardware/planning/pin-description.xlsx)
+[^pin-description]: [LIOT - ESP8266EX Pin Description List (Excel)](/media/liot_esp8266_env/documents/esp8266ex-pin-description.xlsx)
 
-[^pin-assignment]: [LIOT - LIOT_ESP8266_ENV Pin Assignment List (Excel)](/media/liot_esp8266_env/hardware/planning/pin-assignment.xlsx)
+[^pin-assignment]: [LIOT - LIOT_ESP8266_ENV Pin Assignment List (Excel)](/media/liot_esp8266_env/documents/liot_esp8266_env-pin-assignment.xlsx)
 
 <!-- http://ip.cadence.com/news/243/330/Tensilica-Unveils-Diamond-Standard-106Micro-Processor-Smallest-Licensable-32-bit-Core -->

@@ -51,3 +51,5 @@ After the PCB has been assembled, the final board will look like as illustrated 
 
 If no errors have been made, next, the implementation of the software can be started.
 
+![LIOT_ESP8266_ENV Board Documentation](/media/liot_esp8266_env/liot_esp8266_env-board-docu.png){:width="40%"}
+*LIOT_ESP8266_ENV Board Documentation*

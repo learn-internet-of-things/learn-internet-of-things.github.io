@@ -106,6 +106,7 @@ $$
 C = \frac{Q}{U}
 $$
 
+<!--
 ### Magnetism
 
 TBD
@@ -113,11 +114,13 @@ TBD
 ### Impedance
 
 TBD
+-->
 
 
 Circuits and Schematics
 -----------------------
 
+<!--
 Today mainly digital.
 
 Example blinking LED in analog schematic https://i.stack.imgur.com/XZ8Or.jpg
@@ -129,6 +132,7 @@ Resistor mainly used for current limitation and logic level definition.
 
 How to read...
 [^network]
+-->
 
 * [Sparkfun - How to Read a Schematic ](https://learn.sparkfun.com/tutorials/how-to-read-a-schematic)
 
