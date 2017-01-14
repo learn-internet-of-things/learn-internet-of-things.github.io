@@ -208,3 +208,12 @@ uint8 I2C_start(
     return I2C_write((address << 1) | (readwrite & 1));
 }
 ```
+
+The full software I2C driver can be found here:
+
+* [soft_i2c.h](https://github.com/liotio/liot_esp8266_env/blob/master/include/driver/soft_i2c.h)
+* [soft_i2c.c](https://github.com/liotio/liot_esp8266_env/blob/master/driver/soft_i2c.c)
+
+
+References
+----------

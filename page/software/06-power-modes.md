@@ -27,7 +27,7 @@ In order to reduce the power loss if no ADC input is needed, it is possible to t
 A Li-Ion battery ...
 [^li-ion]
 
-![Battery Characteristics](/media/software/power-modes/battery-characteristics.png)
+![Battery Characteristics](/media/liot_esp8266_env/software/power-modes/battery-characteristics.png)
 *Rechargeable battery charge/discharge curve with mid-point voltage (MPV) and end-of-discharge voltage (EODC) [^recharge-batteries]*
 
 The measurement unit of the ADC is 1/1024 V, which means that an input value of 1024 represents 1.0 V.
@@ -112,4 +112,4 @@ References
 
 [^recharge-batteries]: [Texas Instruments - Characteristics of Rechargeable Batteries](http://www.ti.com/lit/an/snva533/snva533.pdf)
 
-[^non-os-sdk-api]: [Espressif - ESP8266 Non-OS SDK API Reference](/media/liot_esp8266_env/datasheets/esp8266_non_os_sdk_api_reference.pdf)
+[^non-os-sdk-api]: [Espressif - ESP8266 Non-OS SDK API Reference](/media/liot_esp8266_env/documents/esp8266_non_os_sdk_api_reference.pdf)

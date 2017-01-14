@@ -4,7 +4,7 @@ title: Hardware Design
 permalink: /hardware/design/
 ---
 
-<!--- <img src="/media/hardware/design/header.png" width="100%" /> -->
+<!--- <img src="/media/liot_esp8266_env/hardware/design/header.png" width="100%" /> -->
 
 Now that a suitable pin assignment has been found (see [Hardware Planning](/hardware/planning/)), it can be continued with the design of the schematic circuit diagram.
 Thanks to digital technology it has become much easier even for beginners to design own schematics.
@@ -59,7 +59,7 @@ For this reason, the connections to the ESP8266EX are very clear.
 As with all subsequent components, the connections follow the reference design of the datasheet.
 The reference design of the ESP8266EX is shown in the following figure.
 
-![ESP8266 Microcontroller Power Supply](/media/hardware/design/esp8266ex-reference.png)
+![ESP8266 Microcontroller Power Supply](/media/liot_esp8266_env/hardware/design/esp8266ex-reference.png)
 *ESP8266EX Reference Design*
 
 Our own design is started with the power supply.
@@ -70,13 +70,13 @@ The decoupling capacitors, that are recommended in the reference design, are mov
 Furthermore, the CHIP_EN pin is pulled high, so that the chip is always enabled when voltage is applied, and RES12K is connected to ground via the envisaged 12 kΩ resistor.
 The power supply of the real-time clock (RTC) is left floating as it will not be used.
 
-![ESP8266 Microcontroller Power Supply](/media/hardware/design/mcu-power.png){:width="75%"}
+![ESP8266 Microcontroller Power Supply](/media/liot_esp8266_env/hardware/design/mcu-power.png){:width="75%"}
 
 Next, an external crystal (abbreviated with XTAL) for the controller clock will be connected.
 The datasheet promises support for crystal frequency ranges from 26 MHz to 52 MHz, but the values of other schematics like the schematic of Espressif’s ESP8266EX module “ESP-WROOM-01”, should be accepted, which were always 26 MHz.
 The connection of the crystal follows the circuit from the “System Description” with two 10 pF decoupling capacitors.
 
-![ESP8266 Microcontroller Crystal](/media/hardware/design/mcu-xtal.png){:width="75%"}
+![ESP8266 Microcontroller Crystal](/media/liot_esp8266_env/hardware/design/mcu-xtal.png){:width="75%"}
 
 One of the most interesting “components” is the Wi-Fi antenna.
 Normally, a ceramic antenna would be used, but since the basic components should be as low in price as possible, the antenna will be implemented directly as a "track" on the board.
@@ -87,7 +87,7 @@ For this purpose, the reference design from Texas Instruments is used, to which 
 This passive antenna is connected to the integrated low-noise amplifier (LNA) via an impedance matching circuit.
 Usually, only the capacitor with a value of 5.6 pF is needed - the inductors are only needed in the case of an impedance mismatch.
 
-![ESP8266 Microcontroller Antenna](/media/hardware/design/mcu-antenna.png){:width="75%"}
+![ESP8266 Microcontroller Antenna](/media/liot_esp8266_env/hardware/design/mcu-antenna.png){:width="75%"}
 
 The remaining connections are the buses for SPI (flash memory), HSPI
 (RF transceiver), I2C (sensors and port expander) and UART (USB-to-serial
@@ -97,11 +97,11 @@ diagram. It is used for special GPIOs, like the reset line from and to the
 ESP8266EX, the analog input of the ESP8266EX (TOUT), the reset line to
 the TCA6416A port expander, and the interrupt line from the port expander.
 
-![ESP8266 Microcontroller IO Busses](/media/hardware/design/mcu-io.png){:width="75%"}
+![ESP8266 Microcontroller IO Busses](/media/liot_esp8266_env/hardware/design/mcu-io.png){:width="75%"}
 
 All connections described can be viewed together in the following figure.
 
-![ESP8266 Microcontroller](/media/hardware/design/mcu.png){:width="75%"}
+![ESP8266 Microcontroller](/media/liot_esp8266_env/hardware/design/mcu.png){:width="75%"}
 
 
 Boot Mode Selection
@@ -110,7 +110,7 @@ Boot Mode Selection
 As described on the planning page, the ESP8266EX boot mode is selected by pulling the pins 13, 14 and 15 high or low.
 For the case that the automatic boot mode selection for firmware uploads is not working, and in order to be able to restart the MCU manually, both the automatic boot mode selection and the push buttons will be used on the board.
 
-![Boot Mode Selection](/media/hardware/design/auto-program.png){:width="22%"}
+![Boot Mode Selection](/media/liot_esp8266_env/hardware/design/auto-program.png){:width="22%"}
 
 
 Serial Flash Memory
@@ -119,7 +119,7 @@ Serial Flash Memory
 The external flash memory has to be connected only to the corresponding lines of the SPI bus.
 Espressif recommends a weak resistor of 200 Ω within the clock line "to reduce the drive current and eliminate external interruption", which is shown in the following figure.
 
-![Serial Flash Memory](/media/hardware/design/flash.png){:width="33%"}
+![Serial Flash Memory](/media/liot_esp8266_env/hardware/design/flash.png){:width="33%"}
 
 
 Battery Power Supply
@@ -139,7 +139,7 @@ However, the maximum input voltage may only be 1.0 V, so that a voltage divider 
 If resistors with sufficiently high values are used for its implementation, the energy that will get lost can be greatly reduced, but it can not be eliminated completely.
 For this reason, it will be possible to turn the voltage divider input on and off for every measurement by using the I/O expander.
 
-![Battery Power Supply](/media/hardware/design/ldor.png)
+![Battery Power Supply](/media/liot_esp8266_env/hardware/design/ldor.png)
 
 
 USB Port Components
@@ -161,7 +161,7 @@ On the other hand, RXD, TXD, DTR and RTS are simply connected to the UART bus.
 The test pads for RXD and TXD are used as fall back connections, in case of a malfunction of the CP2102.
 Lastly, reset (RST) should be pulled high in order to avoid uncontrolled restarts caused by interferences.
 
-![USB Port Components](/media/hardware/design/usb.png){:width="65%"}
+![USB Port Components](/media/liot_esp8266_env/hardware/design/usb.png){:width="65%"}
 
 
 I/O Port Expander
@@ -181,7 +181,7 @@ The already presented circuit, for enabling the voltage
 measurement of the battery via the voltage divider, also follows this principle.
 Additionally, two ports are used to drive the depicted LEDs and another is used to turn off the on/off controller.
 
-![I/O Port Expander](/media/hardware/design/port-exp.png){:width="76%"}
+![I/O Port Expander](/media/liot_esp8266_env/hardware/design/port-exp.png){:width="76%"}
 
 
 868 MHz Transceiver
@@ -196,7 +196,7 @@ Furthermore, it also needs a 26 MHz crystal oscillator that is connected just as
 The HSPI lines are connected corresponding to the intended pins, and GDO0 and GDO2 will be connected to the ESP8266EX via the I/O expander.
 These pins belong to configurable outputs which generate interrupts for different events like carrier sense, packet receive, etc.
 
-![I/O Port Expander](/media/hardware/design/rf-transc.png){:width="76%"}
+![I/O Port Expander](/media/liot_esp8266_env/hardware/design/rf-transc.png){:width="76%"}
 
 
 Sensors
@@ -212,7 +212,7 @@ COM0 and COM1 are used as I2C data and clock pins, INT is a configurable interru
 Similarly, the I2C interface on BME280 is selected via pin CSB and the slave address 0x77 via SDO.
 The rest is standard procedure and self-explained by the pin names.
 
-![Sensors](/media/hardware/design/sensor.png)
+![Sensors](/media/liot_esp8266_env/hardware/design/sensor.png)
 
 
 External Pins
@@ -222,7 +222,7 @@ In order to connect external components or an oscilloscope to inspect the interf
 These are used to lead out the I2C, the HSPI or the lines of port 1 of the I/O expander.
 The power supply pins for 3.3 V and GND, as well as for the battery voltage are lead out.
 
-![External Pins](/media/hardware/design/pinout.png){:width="25%"}
+![External Pins](/media/liot_esp8266_env/hardware/design/pinout.png){:width="25%"}
 
 
 Complete Design

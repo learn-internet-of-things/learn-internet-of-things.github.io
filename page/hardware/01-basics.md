@@ -130,6 +130,8 @@ Resistor mainly used for current limitation and logic level definition.
 How to read...
 [^network]
 
+* [Sparkfun - How to Read a Schematic ](https://learn.sparkfun.com/tutorials/how-to-read-a-schematic)
+
 Electrical Components
 ---------------------
 
@@ -151,7 +153,7 @@ For mobile devices, many different types of (rechargeable) batteries that provid
 Stationary devices, on the other hand, can be powered by a power supply that that converts alternating current (AC) from the electrical grid to direct current (DC).
 Depending on the application area and the environment, however, other power sources such as solar cells are also conceivable.
 
-![Power Source Symbol](/media/hardware/basics/powersource-symbol.png)
+![Power Source Symbol](/media/liot_esp8266_env/hardware/basics/powersource-symbol.png)
 *Symbol of a DC power supply and a 1-cell battery*
 
 In digital schematics mainly distinction between power source, often named VCC (positive pole) and ground, often named GND (negative pole).
@@ -162,14 +164,14 @@ In digital schematics mainly distinction between power source, often named VCC (
 
 Wires just like resistors, ...
 
-![Resistor Symbol](/media/hardware/basics/resistor-symbol.png)
+![Resistor Symbol](/media/liot_esp8266_env/hardware/basics/resistor-symbol.png)
 *EU and US symbol of a resistor*
 
 ### Capacitors
 
 Capacitors are passive components and allow to make use of capacitance.
 
-![Capacitor Symbol](/media/hardware/basics/capacitor-symbol.png)
+![Capacitor Symbol](/media/liot_esp8266_env/hardware/basics/capacitor-symbol.png)
 *EU and US symbol of a capacitor*
 
 ...
@@ -178,7 +180,7 @@ Capacitors are passive components and allow to make use of capacitance.
 
 passive
 
-![Inductor Symbol](/media/hardware/basics/inductor-symbol.png)
+![Inductor Symbol](/media/liot_esp8266_env/hardware/basics/inductor-symbol.png)
 *EU and US symbol of a inductor*
 
 ### Transistors
@@ -192,10 +194,10 @@ In order to switch a strong load current, which then flows from the collector to
 Bipolar transistors are self-locking, ie the circuit between the collector and the emitter is interrupted when no current is applied to the base.
 Since both the current and the voltage at the base can be significantly smaller than at the collector, bipolar transistors provide an amplifier functionality.
 
-![Bipolar Transistor Symbol](/media/hardware/basics/bipolartransistor-symbol.png)
+![Bipolar Transistor Symbol](/media/liot_esp8266_env/hardware/basics/bipolartransistor-symbol.png)
 *Symbol of a NPN and PNP transistor*
 
-![Bipolar Transistor Schema](/media/hardware/basics/bipolartransistor-schema.png)
+![Bipolar Transistor Schema](/media/liot_esp8266_env/hardware/basics/bipolartransistor-schema.png)
 *Schema of a NPN and PNP transistor*
 
 MOS-FET
@@ -206,7 +208,7 @@ Selbstsperrend, selbstleitend
 
 * N-Kanal MOS-FET wird durchgeschaltet, wenn 1 an Gate
 
-![MOSFET Symbol](/media/hardware/basics/mosfet-symbol.png)
+![MOSFET Symbol](/media/liot_esp8266_env/hardware/basics/mosfet-symbol.png)
 *Symbol of an N-channel and P-channel MOSFET, enhancement-mode above, depletion-mode below*
 
 ### Diodes

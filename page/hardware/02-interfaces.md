@@ -11,15 +11,15 @@ General-Purpose Input/Output
 
 **Push-Pull**
 
-![Push-Pull](/media/hardware/interfaces/push-pull.png)
+![Push-Pull](/media/liot_esp8266_env/hardware/interfaces/push-pull.png)
 
 **Tristate**
 
-![Tristate](/media/hardware/interfaces/tristate.png)
+![Tristate](/media/liot_esp8266_env/hardware/interfaces/tristate.png)
 
 **Open Collector**
 
-![Open-Collector](/media/hardware/interfaces/open-collector.png)
+![Open-Collector](/media/liot_esp8266_env/hardware/interfaces/open-collector.png)
 
 
 Analog-to-Digital Converter

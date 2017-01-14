@@ -10,9 +10,11 @@ On this page, the “Cadsoft EAGLE PCB Design Software” was used but this play
 Sparkfun offers a good tutorial for a first simple board layout.
 See https://learn.sparkfun.com/tutorials/using-eagle-board-layout
 
-https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints
+* [Sparkfun - PCB Basics](https://learn.sparkfun.com/tutorials/pcb-basics)
 
-https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd
+* [Sparkfun - Designing PCBs: SMD Footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints)
+
+* [Sparkfun - Designing PCBs: Advanced SMD](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd)
 
 In the first step a package must be created for each symbol of the circuit diagram.
 It must be selected between the through-hole or surface-mounting technology, if applicable. 

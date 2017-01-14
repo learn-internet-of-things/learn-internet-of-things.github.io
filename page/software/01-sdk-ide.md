@@ -150,20 +150,20 @@ Simply download it from the following page and use the installer to install it.
 
 ### Create a Makefile Project
 
-![Create a new Makefile project](/media/software/sdk/ide/makefile_project.png)
+![Create a new Makefile project](/media/liot_esp8266_env/software/sdk/ide/makefile_project.png)
 
-![Configure the new Makefile project](/media/software/sdk/ide/makefile_project_config.png)
+![Configure the new Makefile project](/media/liot_esp8266_env/software/sdk/ide/makefile_project_config.png)
 
-![Create a new Makefile](/media/software/sdk/ide/makefile_new.png)
+![Create a new Makefile](/media/liot_esp8266_env/software/sdk/ide/makefile_new.png)
 
-![Edit the new Makefile](/media/software/sdk/ide/makefile_content.png)
+![Edit the new Makefile](/media/liot_esp8266_env/software/sdk/ide/makefile_content.png)
 
 Same way create new directory `include`, the file `user_config.h` in the just created `include` directory and the file `app.c` in the project root directory.
 
 
 ### Add Project's Include Paths
 
-![Edit the new Makefile](/media/software/sdk/ide/path_sdk_include.png)
+![Edit the new Makefile](/media/liot_esp8266_env/software/sdk/ide/path_sdk_include.png)
 
 Same way add directory path `/app/include/`, but this time also select the option "Is a workspace path".
 
@@ -184,11 +184,11 @@ void user_init()
 
 Furthermore, again fill the Makefile with the code shown in the following image.
 
-![Edit the new Makefile](/media/software/sdk/ide/app_code.png)
+![Edit the new Makefile](/media/liot_esp8266_env/software/sdk/ide/app_code.png)
 
 ### Create Make Targets
 
-![Create a new Make target](/media/software/sdk/ide/make_target.png)
+![Create a new Make target](/media/liot_esp8266_env/software/sdk/ide/make_target.png)
 
 Now compilation can be started by double clicking "all" Makefile target execute it from the shell.
 
@@ -196,7 +196,7 @@ Now compilation can be started by double clicking "all" Makefile target execute 
 make all
 ```
 
-![Edit the new Makefile](/media/software/sdk/ide/app_compile.png)
+![Edit the new Makefile](/media/liot_esp8266_env/software/sdk/ide/app_compile.png)
 
 Also add other Makefile targets. The whole list of build targets is:
 

@@ -38,41 +38,8 @@ Furthermore the chip has 16 GPIO's that are multiplexed with other functions lik
 For a complete list, you can see the table below, that is mainly taken from the ESP8266EX datasheet.
 The pin description is fitted a bit to the applications that are really used.
 
-| Pin | Name        | Type | Description / Main Application                     | GPIO   | PWM  | SDIO        | SPI   | HSPI  | UART      | I2S      | Misc       |
-| ---:| ----------- | ---- | -------------------------------------------------- | ------ | ---- | ----------- | ----- | ----- | --------- | -------- | ---------- |
-|   1 | VDDA        | P    | Analog Power 3.0V ~ 3.6V                           |        |      |             |       |       |           |          |            |
-|   2 | LNA         | I/O  | RF Antenna Interface, 50Ω Impedance                |        |      |             |       |       |           |          |            |
-|   3 | VDD3P3      | P    | Amplifier Power 3.0V ~ 3.6V                        |        |      |             |       |       |           |          |            |
-|   4 | VDD3P3      | P    | Amplifier Power 3.0V ~ 3.6V                        |        |      |             |       |       |           |          |            |
-|   5 | VDD_RTC     | P    | NC (1.1V)                                          |        |      |             |       |       |           |          |            |
-|   6 | TOUT        | I    | ADC Pin (internal)                                 |        |      |             |       |       |           |          |            |
-|   7 | CHIP_PU     | I    | Chip Enable (High: On, Low: Off w/ small current)  |        |      |             |       |       |           |          |            |
-|   8 | XPD_DCDC    | I/O  | Deep-Sleep Wakeup                                  | GPIO16 |      |             |       |       |           |          |            |
-|   9 | MTMS        | I/O  | HSPI Clock                                         | GPIO14 | PWM2 |             |       | CLK   | UART0_DSR | I2SI_WS  |            |
-|  10 | MTDI        | I/O  | HSPI Master In Slave Out                           | GPIO12 | PWM0 |             |       | MISO  | UART0_DTR | I2SI_SD  |            |
-|  11 | VDDPST      | P    | Digital/IO Power Supply (1.8V ~ 3.3V)              |        |      |             |       |       |           |          |            |
-|  12 | MTCK        | I/O  | HSPI Master Out Slave In                           | GPIO13 |      |             |       | MOSI  | UART0_CTS | I2SI_SCK |            |
-|  13 | MTDO        | I/O  | HSPI Chip Select,                                  | GPIO15 | PWM1 |             |       | /CS   | UART0_RTS | I2SO_SCK |            |
-|  14 | GPIO2       | I/O  | General Purpose Input / Output                     | GPIO2  |      |             |       |       | *         | I2SO_WS  |            |
-|  15 | GPIO0       | I/O  | General Purpose Input / Output                     | GPIO0  |      |             | /CS2  |       |           |          |            |
-|  16 | GPIO4       | I/O  | General Purpose Input / Output                     | GPIO4  | PWM3 |             |       |       |           |          | CLK_XTAL   |
-|  17 | VDDPST      | P    | Digital/IO Power Supply (1.8V ~ 3.3V)              |        |      |             |       |       |           |          |            |
-|  18 | SDIO_DATA_2 | I/O  | SPI / HSPI Hold                                    | GPIO9  |      | SDIO_DATA_2 | /HOLD | /HOLD |           |          |            |
-|  19 | SDIO_DATA_3 | I/O  | SPI / HSPI Write Protect                           | GPIO10 |      | SDIO_DATA_3 | /WP   | /WP   |           |          |            |
-|  20 | SDIO_CMD    | I/O  | SPI Chip Select 0                                  | GPIO11 |      | SDIO_CMD    | /CS0  |       | UART1_RTS |          |            |
-|  21 | SDIO_CLK    | I/O  | SPI Clock                                          | GPIO6  |      | SDIO_CLK    | CLK   |       | UART1_CTS |          |            |
-|  22 | SDIO_DATA_0 | I/O  | SPI Master In Slave Out, UART1 Tx                  | GPIO7  |      | SDIO_DATA_0 | MISO  |       | UART1_TXD |          |            |
-|  23 | SDIO_DATA_1 | I/O  | SPI Master Out Slave In, UART1 Rx                  | GPIO8  |      | SDIO_DATA_1 | MOSI  |       | UART1_RXD |          |            |
-|  24 | GPIO5       | I/O  | General Purpose Input / Output                     | GPIO5  |      |             |       |       |           |          | CLK_RTC    |
-|  25 | U0RXD       | I/O  | UART0 Rx                                           | GPIO3  |      |             |       |       | UART0_RXD | I2SO_SD  | CLK_XTAL   |
-|  26 | U0TXD       | I/O  | UART0 Tx                                           | GPIO1  |      |             | /CS1  |       | UART0_TXD |          | CLK_RTC    |
-|  27 | XTAL_OUT    | I/O  | Crystal oscillator output                          |        |      |             |       |       |           |          |            |
-|  28 | XTAL_IN     | I/O  | Crystal oscillator input                           |        |      |             |       |       |           |          |            |
-|  29 | VDDD        | P    | Analog Power 3.0V ~ 3.6V                           |        |      |             |       |       |           |          |            |
-|  30 | VDDA        | P    | Analog Power 3.0V ~ 3.6V                           |        |      |             |       |       |           |          |            |
-|  31 | RES12K      | I    | Series with 12 kΩ resistor connected to ground     |        |      |             |       |       |           |          |            |
-|  32 | EXT_RSTB    | I    | External reset signal (Low: Active)                |        |      |             |       |       |           |          |            |
-|  33 | GND         | P    | Ground                                             |        |      |             |       |       |           |          |            |
+![ESP8266EX Pin Description](/media/hardware/planning/pin-description.png)
+*ESP8266EX Pin Description [^pin-description]*
 
 
 * UART0_TXD / UART1_TXD during flash programming
@@ -131,76 +98,15 @@ RF: Sub-1-Ghz (Sigfox), Wi-Fi, Bluetooth, GSM
 
 GPIO, Timers, RTC, PWM, ADC, DAC, SDIO, ...
  
- 
+![LIOT_ESP8266_ENV Pin Assignment](/media/liot_esp8266_env/hardware/planning/pin-assignment.png)
+*LIOT_ESP8266_ENV Pin Assignment [^pin-assignment]*
 
-| Pin | Name        | Type | GPIO       | SPI       | HSPI      | UART       | I2S      | Misc         | W25Q128   | CP2102    | CC1101   | PCA6416A   | I2C Bus     | Piezo | RGB-LED |
-| ---:| ----------- | ---- | ---------- | --------- | --------- | ---------- | -------- | ------------ | --------- | --------- | -------- | --------   | ----------- | ----- |         |
-|   8 | XPD_DCDC    | I/O  | **GPIO16** |           |           |            |          | **EXT_RSTB** |           |           |          |            |             |       |         |
-|   9 | MTMS        | I/O  | GPIO14     |           | **CLK**   | U0_DSR     | I2SI_WS  |              |           |           | **SCLK** |            |             |       |         |
-|  10 | MTDI        | I/O  | GPIO12     |           | **MISO**  | U0_DTR     | I2SI_SD  |              |           |           | **SDO**  |            |             |       |         |
-|  12 | MTCK        | I/O  | GPIO13     |           | **MOSI**  | U0_CTS     | I2SI_SCK |              |           |           | **SDI**  |            |             |       |         |
-|  13 | MTDO        | I/O  | GPIO15     |           | **/CS**   | U0_RTS     | I2SO_SCK |              |           |           | **nSEL** |            |             |       |         |
-|  14 | GPIO2       | I/O  | **GPIO2**  |           |           | **²**      | I2SO_WS  |              |           |           |          | **SDI**    |             |       |         |
-|  15 | GPIO0       | I/O  | **GPIO0**  | /CS2      |           |            |          |              |           | **/RTS²** |          | **/RESET** |             |       |         |
-|  16 | GPIO4       | I/O  | **GPIO4**  |           |           |            |          | CLK_XTAL     |           |           |          | **SCK**    | **SCK**     |       |         |
-|  18 | SDIO_DATA_2 | I/O  | GPIO9      | **/HOLD** | /HOLD     |            |          |              | **/HOLD** |           |          |            |             |       |         |
-|  19 | SDIO_DATA_3 | I/O  | GPIO10     | **/WP**   | /WP       |            |          |              | **/WP**   |           |          |            |             |       |         |
-|  20 | SDIO_CMD    | I/O  | GPIO11     | **/CS0**  |           | U1_RTS     |          |              | **/CS**   |           |          |            |             |       |         |
-|  21 | SDIO_CLK    | I/O  | GPIO6      | **CLK**   |           | U1_CTS     |          |              | **CLK**   |           |          |            |             |       |         |
-|  22 | SDIO_DATA_0 | I/O  | GPIO7      | **MISO**  |           | U1_TXD     |          |              | **DO**    |           |          |            |             |       |         |
-|  23 | SDIO_DATA_1 | I/O  | GPIO8      | **MOSI**  |           | U1_RXD     |          |              | **DI**    |           |          |            |             |       |         |
-|  24 | GPIO5       | I/O  | **GPIO5**  |           |           |            |          | CLK_RTC      |           |           |          | **/INT**   | **SDI**     |       |         |
-|  25 | U0RXD       | I/O  | GPIO3      |           |           | **U0_RXD** | I2SO_SD  | CLK_XTAL     |           | **TXD**   |          |            |             |       |         |
-|  26 | U0TXD       | I/O  | GPIO1      | /CS1      |           | **U0_TXD** |          | CLK_RTC      |           | **RXD**   |          |            |             |       |         |
-
-<small>1. I2C slaves are PCA6416A (Port Expander, with extra column), BME280 (Temp / Hum / Baro), BMX055 (Accel / Gyro / Mag), APDS-9930 (Prox / Bright)</small>  
-<small>2. during flash programming U0_TXD / U1_TXD, 3. during flash programming</small>
-
-GPIO16 needs to be connected to EXT_RSTB if deep sleep wakeup should be possible
-
-Missing Pins
-------------
-
-Si4463: nIRQ
-
-PCA6416A: SCK, SDI, Address-Pins: ADDR(GND = 0x40/0x41, VDD = 0x42/0x43)
-
-BME280: SCK, SDI, Address-Pins: SDO (GND = 0x76, VDD = 0x77)
-
-BMX055: SCx, SDx, Address-Pins: SDO1, SDO2, CSB3 (0x10-0x13, 0x18, 0x19, 0x68, 0x69)
-
-APDS-9930: SCL, SDA, INT
-
-abmt-801 piezo
-
-
-Enery Saving Options
---------------------
-
-https://github.com/z2amiller/sensorboard/blob/master/PowerSaving.md
-
-
-No free Pins left
------------------
-
-PWM?
-
-Output 1 at port expander, AND with clock signal as PWM
-
-
-Examples
---------
-
-https://github.com/knewron-technologies/1btn
-
-https://github.com/nkolban/esplibs
-
-RTC https://blog.the-jedi.co.uk/2016/01/09/led-matrix-alarm-clock-update/
-
-Downloads
----------
 
 References
 ----------
 
-http://ip.cadence.com/news/243/330/Tensilica-Unveils-Diamond-Standard-106Micro-Processor-Smallest-Licensable-32-bit-Core
+[^pin-description]: [LIOT - ESP8266EX Pin Description List (Excel)](/media/liot_esp8266_env/hardware/planning/pin-description.xlsx)
+
+[^pin-assignment]: [LIOT - LIOT_ESP8266_ENV Pin Assignment List (Excel)](/media/liot_esp8266_env/hardware/planning/pin-assignment.xlsx)
+
+<!-- http://ip.cadence.com/news/243/330/Tensilica-Unveils-Diamond-Standard-106Micro-Processor-Smallest-Licensable-32-bit-Core -->
