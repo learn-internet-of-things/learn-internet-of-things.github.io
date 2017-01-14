@@ -346,7 +346,7 @@ References
 
 [^li-ion]: [Wikipedia - Lithium-Ion Battery](https://en.wikipedia.org/wiki/Lithium-ion_battery)
 
-[^tca6316a-datasheet]: [Texas Instruments - TCA6416A Datasheet](/media/liot_esp8266_env/liot_esp8266_env/documents/tca6416a-datasheet.pdf)
+[^tca6316a-datasheet]: [Texas Instruments - TCA6416A Datasheet](/media/liot_esp8266_env/documents/tca6416a-datasheet.pdf)
 
 [^bme280-datasheet]: [Bosch Sensortec - BME280 Datasheet](/media/liot_esp8266_env/documents/bme280-datasheet.pdf)
 

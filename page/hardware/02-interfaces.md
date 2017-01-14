@@ -7,7 +7,9 @@ permalink: /hardware/interfaces/
 General-Purpose Input/Output
 ----------------------------
 
-Different types of output stages
+
+
+Different types of output stages[^outputstages]
 
 * Push-Pull
 * Tristate
@@ -110,3 +112,4 @@ However, it is not designed for intra-board communication and therefore not furt
 References
 ----------
 
+[^outputstages]: [Mikrocontroller.net - Output Stages Logic ICs (German)](https://www.mikrocontroller.net/articles/Ausgangsstufen_Logik-ICs)

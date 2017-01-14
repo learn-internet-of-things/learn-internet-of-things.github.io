@@ -104,24 +104,6 @@ All connections described can be viewed together in the following figure.
 ![ESP8266 Microcontroller](/media/liot_esp8266_env/hardware/design/mcu.png){:width="75%"}
 
 
-Boot Mode Selection
--------------------
-
-As described on the planning page, the ESP8266EX boot mode is selected by pulling the pins 13, 14 and 15 high or low.
-For the case that the automatic boot mode selection for firmware uploads is not working, and in order to be able to restart the MCU manually, both the automatic boot mode selection and the push buttons will be used on the board.
-
-![Boot Mode Selection](/media/liot_esp8266_env/hardware/design/auto-program.png){:width="22%"}
-
-
-Serial Flash Memory
--------------------
-
-The external flash memory has to be connected only to the corresponding lines of the SPI bus.
-Espressif recommends a weak resistor of 200 Ω within the clock line "to reduce the drive current and eliminate external interruption", which is shown in the following figure.
-
-![Serial Flash Memory](/media/liot_esp8266_env/hardware/design/flash.png){:width="33%"}
-
-
 Battery Power Supply
 --------------------
 
@@ -140,6 +122,15 @@ If resistors with sufficiently high values are used for its implementation, the 
 For this reason, it will be possible to turn the voltage divider input on and off for every measurement by using the I/O expander.
 
 ![Battery Power Supply](/media/liot_esp8266_env/hardware/design/ldor.png)
+
+
+Serial Flash Memory
+-------------------
+
+The external flash memory has to be connected only to the corresponding lines of the SPI bus.
+Espressif recommends a weak resistor of 200 Ω within the clock line "to reduce the drive current and eliminate external interruption", which is shown in the following figure.
+
+![Serial Flash Memory](/media/liot_esp8266_env/hardware/design/flash.png){:width="33%"}
 
 
 USB Port Components
@@ -162,6 +153,15 @@ The test pads for RXD and TXD are used as fall back connections, in case of a ma
 Lastly, reset (RST) should be pulled high in order to avoid uncontrolled restarts caused by interferences.
 
 ![USB Port Components](/media/liot_esp8266_env/hardware/design/usb.png){:width="65%"}
+
+
+Boot Mode Selection
+-------------------
+
+As described on the planning page, the ESP8266EX boot mode is selected by pulling the pins 13, 14 and 15 high or low.
+For the case that the automatic boot mode selection for firmware uploads is not working, and in order to be able to restart the MCU manually, both the automatic boot mode selection and the push buttons will be used on the board.
+
+![Boot Mode Selection](/media/liot_esp8266_env/hardware/design/auto-program.png){:width="22%"}
 
 
 I/O Port Expander
