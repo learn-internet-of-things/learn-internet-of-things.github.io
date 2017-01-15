@@ -32,6 +32,9 @@ You can find more details for the reasons choosing this device in the master's t
 The ESP8266EX is a bit complicated in gathering all the needed data because Espressif Systems, the manufacturer of the chip, keeps itself covered or omits a lot of documentation.
 This is bothersome on the one hand, but helps to reflect on the important things.
 
+![ESP8266EX Pin Layout](/media/liot_esp8266_env/hardware/planning/esp8266ex-pin-layout.png)
+*ESP8266EX Pin Layout[^esp8266ex-datasheet]*
+
 You will find the information that the chip "integrates an enhanced version of Tensilica's L106 Diamond series 32 bit processor" that is running normally at a speed of 80 MHz.
 Cadence, that is the new name of the Tensilica processors manufacturer, declares them as "based on an industry-standard architecture" and "smaller than the ARM7 or Cortex-M3 cores" based on the chosen manufacturing process.
 Absolute values for the provided memory are hard to find.
@@ -86,6 +89,10 @@ With these, we don't need to care about overcharge / discharge protection in our
 
 As the battery voltage fluctuates between 4.2 V at full charge and about 3.4 V at full discharge, but the ESP8266EX is only tolerant to voltages of 3.0 to 3.6 V, a voltage regulator is required.
 
+<http://www.ti.com/product/TPS737>
+
+![Texas Instruments TPS737 LDO Regulator](/media/liot_esp8266_env/hardware/planning/tps737-image.jpg)
+*Texas Instruments TPS737 LDO Regulator [^tps737-datasheet]*
 
 
 Serial Flash Memory
@@ -225,6 +232,8 @@ References
 [^pin-description]: [LIOT - ESP8266EX Pin Description List (Excel)](/media/liot_esp8266_env/documents/esp8266ex-pin-description.xlsx)
 
 [^battery]: [Nitecore - NL147 Li-Ion Battery](http://charger.nitecore.com/product/14500-li-ion-battery-nl147)
+
+[^tps737-datasheet]: [Texas Instruments - TPS737 LDO Regulator](/media/liot_esp8266_env/documents/tps737-datasheet.pdf)
 
 [^w25q128-datasheet]: [Winbond - W25Q128 Datasheet](/media/liot_esp8266_env/documents/w25q128-datasheet.pdf)
 
