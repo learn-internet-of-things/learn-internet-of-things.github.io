@@ -10,11 +10,13 @@ Then, you are forced to switch to a lower level to remedy the defect for example
 But if you are planning and assembling some hardware, you must not make any mistakes or you might destroy your new ICs or get a set of useless PCBs.
 So, the planning process has to be done very carefully.
 
+<!--
 LIOT_ESP8266_ENV
 
 It doesn't really matter what the LIOT-ESP8266 board can do.
 Rather, it is relevant what concepts are covered by the selected components.
 These concepts include electrotechnical basics, connection interfaces, transmission standards and other features supported by the used hardware.
+-->
 
 
 Microcontroller
@@ -52,6 +54,7 @@ The pin description is fitted a bit to the applications that are really used.
 ![ESP8266EX Pin Description](/media/liot_esp8266_env/hardware/planning/esp8266ex-pin-description.png)
 *ESP8266EX Pin Description [^esp8266ex-datasheet] [^pin-description]*
 
+<!--
 ################
 
 Then, it is started with the main connections on the board.
@@ -74,6 +77,7 @@ Admittedly, also the power supply offers a wide range of options, but nonetheles
 ################
 
 GPIO 16 must be connected to the EXT\_RSTB pin of the ESP8266EX to be able to wakeup from deep sleep again.
+-->
 
 
 Battery Power Supply
@@ -89,10 +93,14 @@ With these, we don't need to care about overcharge / discharge protection in our
 
 As the battery voltage fluctuates between 4.2 V at full charge and about 3.4 V at full discharge, but the ESP8266EX is only tolerant to voltages of 3.0 to 3.6 V, a voltage regulator is required.
 
+<!--
 <http://www.ti.com/product/TPS737>
+-->
 
 ![Texas Instruments TPS737 LDO Regulator](/media/liot_esp8266_env/hardware/planning/tps737-image.jpg)
 *Texas Instruments TPS737 LDO Regulator [^tps737-datasheet]*
+
+...
 
 
 Serial Flash Memory
@@ -204,6 +212,7 @@ Inertial Measurement Unit
 Other Components
 ----------------
 
+<!--
 The requirement for dimmable LED's may be waived foremost.
 Instead, they will be connected to the port expander to simply switch them on and off.
 Pins 4 and 5 will be used for software-I2C.
@@ -215,6 +224,7 @@ In order to get in the signaler, a trick will be used.
 The signaler will be connected to the I2C clock line via a transistor.
 Since the I2C interface will be implemented only by software, it can be achieved to obtain mutual exclusion of both components;
 the signaler will only be enabled if the transistor is switched on by a GPIO of the port expander and thus will not make any noise if I2C is used, and the I2C slaves will not receive any data when the signaler is used and thus ignore the false "clock signal".
+-->
 
 
 LIOT_ESP8266_ENV

@@ -163,26 +163,27 @@ Depending on the application area and the environment, however, other power sour
 In digital schematics mainly distinction between power source, often named VCC (positive pole) and ground, often named GND (negative pole).
 
 ### Resistors
- 
+
+<!--
 (passive)
 
 Wires just like resistors, ...
+-->
 
 ![Resistor Symbol](/media/liot_esp8266_env/hardware/basics/resistor-symbol.png)
 *EU and US symbol of a resistor*
 
 ### Capacitors
 
+<!--
 Capacitors are passive components and allow to make use of capacitance.
+-->
 
 ![Capacitor Symbol](/media/liot_esp8266_env/hardware/basics/capacitor-symbol.png)
 *EU and US symbol of a capacitor*
 
-...
 
 ### Inductors
-
-passive
 
 ![Inductor Symbol](/media/liot_esp8266_env/hardware/basics/inductor-symbol.png)
 *EU and US symbol of a inductor*
@@ -206,17 +207,20 @@ Since both the current and the voltage at the base can be significantly smaller 
 
 MOS-FET
 
+<!--
 Selbstsperrend, selbstleitend
 
 * P-Kanal MOS-FET wird durchgeschaltet, wenn 0 an Gate
 
 * N-Kanal MOS-FET wird durchgeschaltet, wenn 1 an Gate
+-->
 
 ![MOSFET Symbol](/media/liot_esp8266_env/hardware/basics/mosfet-symbol.png)
 *Symbol of an N-channel and P-channel MOSFET, enhancement-mode above, depletion-mode below*
 
 ### Diodes
 
+<!--
 active
 
 Diode
@@ -230,9 +234,13 @@ See http://cdn2.rare-earth-magnets.com/images/content/conventional-versus-electr
 Flyback / Flywheel diode
 On Inductive loads
 https://en.wikipedia.org/wiki/Flyback_diode
+-->
 
+### Integrated Circuits
 
-### Integrated Circuits (active)
+<!--
+(active)
+-->
 
 Regulators
 Logic Gates

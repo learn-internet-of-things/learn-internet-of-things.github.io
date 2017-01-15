@@ -124,6 +124,8 @@ void HTTPD_on_receive(
 MQTT Client
 -----------
 
+* <https://github.com/tuanpmt/esp_mqtt>
+
 
 References
 ----------

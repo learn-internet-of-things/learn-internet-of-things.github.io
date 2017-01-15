@@ -20,6 +20,7 @@ CAD Software
 The hardware will be designed with the popular CAD software [Eagle](http://www.cadsoft.de/download-eagle/eagle-freeware/).
 Other options exist.
 
+<!--
 The software launches with its *Control Panel*.
 Create a new *Project* by clicking *File*, *New* and *Project*.
 By rightclicking the just created project, you can now create a new *Schematic* for your project.
@@ -47,6 +48,7 @@ That's the only way to be sure not to copy the mistakes of others.
 Before starting with adding devices to your schematic, let's create an own device - the ESP8266EX.
 
 Switch to the control panel window and select *File*, *New* and *Library*.
+-->
 
 
 Microcontroller

@@ -22,5 +22,11 @@ Interrupts
 ----------
 
 
+Interaction
+-----------
+
+![](/media/liot_esp8266_env/software/tasks-timer-interrupts/task.png)
+
+
 References
 ----------

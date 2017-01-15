@@ -59,6 +59,7 @@ void user_start()
 General-Purpose I/O
 -------------------
 
+<!--
 ...
 
 ```c
@@ -90,6 +91,7 @@ uint32 gpio_input_get(void);
 ```
 
 Furthermore, it is possible to decide between the output stages push-pull and open-collector (see [Hardware Interfaces](/hardware/interfaces/#general-purpose-inputoutput).
+-->
 
 
 I2C Driver
